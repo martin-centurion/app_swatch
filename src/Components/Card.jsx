@@ -2,9 +2,9 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { themes } from '../Global/Themes'
 
-const Card = ( {children} ) => {
+const Card = ( {children, additionalStyle = []} ) => {
   return (
-    <View style={styles.cardContainer}>
+    <View style={[styles.cardContainer, additionalStyle]}>
       { children }
     </View>
   )
@@ -14,8 +14,9 @@ export default Card
 
 const styles = StyleSheet.create({
     cardContainer: {
-        width: 250,
+        width: 350,
         height: 80,
+        paddingLeft: 15,
         borderRadius: 10,
         backgroundColor: themes.terciary,
         justifyContent: 'center',

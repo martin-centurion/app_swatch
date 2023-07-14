@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         fontSize: 20,
-        color: themes.secondary
+        color: themes.secondary,
+        fontFamily: 'Poppins-Bold'
     }
 })

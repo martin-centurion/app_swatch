@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     },
     categoryText: {
         color: themes.primary,
+        fontFamily: 'Poppins-Regular',
         fontSize: 16,
         letterSpacing: .5,
     }

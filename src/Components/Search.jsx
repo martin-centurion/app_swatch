@@ -15,18 +15,18 @@ const Search = ({
   return (
     <View style ={styles.container}>
         <TextInput style ={styles.input} 
-            placeholder='Search...'
+            placeholder='Buscar'
             value={keyword}
             onChangeText={setKeyword}
         />
         <Pressable onPress={()=>onSearch(keyword)}>
-            <FontAwesome name="search" size={24} color="black" />
+            <FontAwesome name="search" size={24} color={themes.terciary} />
         </Pressable>
         <Pressable onPress={()=> setKeyword("")}>
-            <FontAwesome5 name="eraser" size={24} color="black" />
+            <FontAwesome5 name="eraser" size={24} color={themes.terciary} />
         </Pressable>
         <Pressable onPress={goBack}>
-            <AntDesign name="back" size={24} color="black" />
+            <AntDesign name="back" size={24} color={themes.terciary} />
         </Pressable>
        { error ?
          <Text>
