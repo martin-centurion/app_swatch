@@ -32,7 +32,7 @@ const Search = ({
          <Text>
             {error}
         </Text>
-        : null}
+        : null }
     </View>
   )
 }

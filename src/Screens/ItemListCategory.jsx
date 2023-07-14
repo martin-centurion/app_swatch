@@ -10,7 +10,7 @@ const ItemListCategory = ({
   setCategory
 }) => {
 
-  const [categorySelected, setCategorySelected] = useState("smartphones")
+  const [categorySelected, setCategorySelected] = useState(category)
   const [products, setProducts] = useState([])
   const [keyword, setKeyword] = useState("")
   const [keywordError, setKeywordError] = useState("")
