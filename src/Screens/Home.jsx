@@ -13,6 +13,7 @@ const Home = () => {
                 data={categories}
                 keyExtractor={category => category}
                 renderItem={({item}) => CategoryItem({item})}
+                showsVerticalScrollIndicator={false}
             />
         </View>
     </View>

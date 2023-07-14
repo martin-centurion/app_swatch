@@ -5,7 +5,7 @@ import { themes } from '../Global/Themes';
 const Header = () => {
   return (
     <View style={styles.containerHeader}>
-      <Text style={styles.headerTitle}>Swatch</Text>
+      <Text style={styles.headerTitle}>Header</Text>
     </View>
   )
 }
