@@ -20,13 +20,13 @@ const Search = ({
             onChangeText={setKeyword}
         />
         <Pressable onPress={()=>onSearch(keyword)}>
-            <FontAwesome name="search" size={24} color={themes.terciary} />
+            <FontAwesome name="search" size={24} color={themes.primary} />
         </Pressable>
         <Pressable onPress={()=> setKeyword("")}>
-            <FontAwesome5 name="eraser" size={24} color={themes.terciary} />
+            <FontAwesome5 name="eraser" size={24} color={themes.primary} />
         </Pressable>
         <Pressable onPress={goBack}>
-            <AntDesign name="back" size={24} color={themes.terciary} />
+            <AntDesign name="back" size={24} color={themes.primary} />
         </Pressable>
        { error ?
          <Text>

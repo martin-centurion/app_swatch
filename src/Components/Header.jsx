@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     headerTitle: {
-        fontSize: 20,
-        color: themes.secondary,
+        fontSize: 30,
+        color: themes.white,
         fontFamily: 'Poppins-Bold'
     }
 })

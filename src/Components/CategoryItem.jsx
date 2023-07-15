@@ -20,7 +20,8 @@ const CategoryItem = ({
 export default CategoryItem
 
 const styles = StyleSheet.create({
-    textCategory: {
+    categoryText: {
         fontSize: 18,
+        fontFamily: 'Poppins-Medium'
     }
 })

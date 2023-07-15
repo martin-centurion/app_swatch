@@ -20,6 +20,10 @@ const ProductItem = ({item}) => {
 export default ProductItem
 
 const styles = StyleSheet.create({
+  textCategory: {
+    fontSize: 18,
+    fontFamily: 'Poppins-Light'
+  },
   image: {
     height: 120,
     width: 100,

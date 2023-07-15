@@ -69,5 +69,75 @@
         "images": [
             "https://static.swatch.com/flikflak/images/product/ZFBNP207/fa200/ZFBNP207_fa200_er007.png"
         ]
+    },
+    {
+        "id": 6,
+        "title": "Silver Glam",
+        "description": "SILVER GLAM IN BIOSOURCED muestra sus engranajes de forma fascinante a través de una ventana recortada en el centro de la esfera de cristal de origen biológico. Una sólida caja de material biológico negro mate se engasta en la correa de silicona negra mate y roja de este reloj, que incluye, además, elegantes piezas plateadas y cristales transparentes.",
+        "price": 52.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Relojes de hombres",
+        "images": [
+            "https://static.swatch.com/images/product/SO29B109/sa200/SO29B109_sa200_er005.png"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Ishtar By Jean",
+        "description": "El reloj ISHTAR BY JEAN-MICHEL BASQUIAT reinterpreta la obra Ishtar de Jean-Michel Basquiat. Este modelo cuenta con una esfera negra llena de palabras y números que son reproducciones exactas de la obra de arte original. En la caja y la correa se pueden ver los dibujos en forma de caras de esta obra sobre un fondo turquesa. La parte inferior y la trabilla de este reloj (en la que se puede leer el nombre del artista) son de color negro para dar un toque de contraste a todo el conjunto. © Estate of Jean-Michel Basquiat. Licensed by Artestar, New York.",
+        "price": 59.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Relojes de hombres",
+        "images": [
+            "https://static.swatch.com/images/product/SO29B109/sa200/SO29B109_sa200_er005.png"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Greem Graphite",
+        "description": "Este reloj ultrafino de acero inoxidable tiene un estilo atemporal. El acero pulido de este elegante reloj realza la esfera negra satinada con estampados verdes y detalles de Swatch plateados. El elegante brazalete incluye una hebilla con forma de mariposa.",
+        "price": 104.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Relojes de hombres",
+        "images": [
+            "https://static.swatch.com/images/product/SS07S128G/sa200/SS07S128G_sa200_er005.png"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Dark Blue Irony",
+        "description": "Este reloj ultrafino de acero inoxidable tiene un estilo atemporal. El acero pulido de este elegante reloj realza la esfera negra satinada con estampados verdes y detalles de Swatch plateados. El elegante brazalete incluye una hebilla con forma de mariposa.",
+        "price": 104.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Relojes de hombres",
+        "images": [
+            "https://static.swatch.com/images/product/YVS507G/sa200/YVS507G_sa200_er005.png"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Rose Rebel / Silicone Strap",
+        "description": "Este reloj ultrafino de acero inoxidable tiene un estilo atemporal. El acero pulido de este elegante reloj realza la esfera negra satinada con estampados verdes y detalles de Swatch plateados. El elegante brazalete incluye una hebilla con forma de mariposa.",
+        "price": 13.195,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Accesorios",
+        "images": [
+            "https://static.swatch.com/images/product/ASUOT700/sa130/ASUOT700_sa130_er005.png"
+        ]
     }
 ]
