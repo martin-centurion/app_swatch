@@ -3,7 +3,7 @@ import React from 'react'
 
 const ItemDetail = () => {
   return (
-    <View>
+    <View style={styles.containerDetail}>
       <Text>ItemDetail</Text>
     </View>
   )
@@ -11,4 +11,8 @@ const ItemDetail = () => {
 
 export default ItemDetail
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  containerDetail: {
+    flex: 8
+  }
+})

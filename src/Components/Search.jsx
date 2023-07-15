@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Pressable, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native'
 import React, { useState } from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -11,9 +11,10 @@ const Search = ({
     goBack
 }) => {
     const [keyword, setKeyword] = useState("")
+    const {width, height} = useWindowDimensions()
 
   return (
-    <View style ={styles.container}>
+    <View style ={width > 320 ? styles.container : styles.containerSm}>
         <TextInput style ={styles.input} 
             placeholder='Buscar'
             value={keyword}
@@ -46,6 +47,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: '10%',
         gap: 18,
+    },
+    containerSm: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        height: '30%'
     },
     input: {
         width: 250,

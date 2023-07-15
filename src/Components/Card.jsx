@@ -14,7 +14,7 @@ export default Card
 
 const styles = StyleSheet.create({
     cardContainer: {
-        width: 350,
+        width: 300,
         height: 80,
         paddingLeft: 15,
         borderRadius: 10,

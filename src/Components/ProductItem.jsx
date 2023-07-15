@@ -1,28 +1,56 @@
-import { Image, StyleSheet, Text } from 'react-native'
-import React from 'react'
-import Card from './Card'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import Card from './Card';
+import { themes } from '../Global/Themes';
 
-const ProductItem = ({item}) => {
+const ProductItem = ({ 
+  item,
+  setProductSelected,
+  setCategorySelected
+}) => {
+
+  const onSelect = (id) => {
+      setProductSelected(id)
+      setCategorySelected("")
+  }
+
+  console.warn(setCategorySelected);
+
   return (
-    <Card
-      additionalStyle={styles.additionalStylesCard}
-    >
-        <Text style={styles.textCategory}>{item.title}</Text>
-        <Image 
-          resizeMode='cover'
-          style = {styles.image}
-          source={{uri: item.images[0]}}
-        />
-    </Card>
+    <Pressable onPress={() => onSelect(item.id)}>
+          <Card
+            additionalStyle={styles.additionalStylesCard}
+          >   
+              <View style={styles.containerTextProduct}>
+                  <Text style={styles.textTitle}>{item.title}</Text>
+                  <Text style={styles.textPrice}>${item.price}</Text>
+              </View>
+              <Image 
+                resizeMode='cover'
+                style = {styles.image}
+                source={{uri: item.images[0]}}
+              />
+          </Card>
+    </Pressable>
   )
 }
 
-export default ProductItem
+export default ProductItem;
 
 const styles = StyleSheet.create({
-  textCategory: {
+  containerTextProduct: {
+    
+  },
+  textTitle: {
     fontSize: 18,
-    fontFamily: 'Poppins-Light'
+    fontFamily: 'Poppins-Light',
+    marginBottom: 3,
+    width: '90%'
+  },
+  textPrice: {
+    fontSize: 16,
+    fontFamily: 'Poppins-Bold',
+    color: themes.primary
   },
   image: {
     height: 120,

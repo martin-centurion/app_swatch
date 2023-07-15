@@ -7,7 +7,8 @@ import { themes } from '../Global/Themes'
 
 const ItemListCategory = ({
   category,
-  setCategory
+  setCategory,
+  setProductSelected
 }) => {
 
   const [categorySelected, setCategorySelected] = useState(category)
@@ -46,7 +47,12 @@ const ItemListCategory = ({
         <FlatList
             data = {products}
             keyExtractor={product => product.id}
-            renderItem={({item}) => ProductItem({item})}
+            renderItem={({item}) => <ProductItem 
+            item={item}
+            setProductSelected = {setProductSelected}
+            setCategorySelected = {setCategory}
+          />}
+            
             showsVerticalScrollIndicator={false}
         />
     </View>
