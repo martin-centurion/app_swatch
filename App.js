@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native';
 import Header from './src/Components/Header';
 import ItemListCategory from './src/Screens/ItemListCategory';
 import { useFonts } from 'expo-font';
@@ -22,7 +22,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
         <Header />
         {
           categoySelected ?
@@ -37,13 +37,13 @@ export default function App() {
             setCategorySelected={setCategorySelected}
           />
         }
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      width: '100%'
+      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     }
 });
