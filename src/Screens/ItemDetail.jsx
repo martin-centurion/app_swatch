@@ -1,4 +1,4 @@
-import { Button, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { Button, FlatList, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from "react";
 import allProducts from "../Data/products.json";
 import { themes } from "../Global/Themes";
@@ -29,14 +29,15 @@ const ItemDetail = ({ idSelected, setProductSelected }) => {
     console.log(product);
 
     return (
-        <View style = {styles.containerDetail}>
+      <View style = {styles.containerDetail}>
           <Pressable style={styles.buttonContainer} onPress={() => setProductSelected("")}>
             <Text style={styles.buttonBackProduct}>
                 <AntDesign name="back" size={24} color={themes.secondary} />
             </Text>
           </Pressable>
             {product ? (
-                <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape} >
+              <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape} >
+                  
                     <Image
                         source={{ uri: product.images[0] }}
                         style={styles.image}
@@ -49,13 +50,15 @@ const ItemDetail = ({ idSelected, setProductSelected }) => {
                     </View>
                 </View>
             ) : null}
+            
 
                       <Pressable style={styles.buttonAddProductContainer}>
                           <Text style={styles.buttonAddProduct}>
                               Agregar Al Carrito
                           </Text>
                       </Pressable>
-        </View>
+        
+      </View>
     );
 };
 
@@ -63,7 +66,7 @@ export default ItemDetail;
 
 const styles = StyleSheet.create({
   containerDetail: {
-    flex: 8
+    height: '80%'
   },
   buttonContainer: {
     alignItems: 'flex-end'
@@ -74,6 +77,12 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20
+  },
+  mainContainerLandscape: {
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20
