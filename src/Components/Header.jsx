@@ -5,7 +5,7 @@ import { themes } from '../Global/Themes';
 const Header = () => {
   return (
     <View style={styles.containerHeader}>
-      <Text style={styles.headerTitle}>Swatch</Text>
+      <Text style={styles.headerTitle}>Bienvenidos a Swatch</Text>
     </View>
   )
 }
@@ -14,14 +14,15 @@ export default Header
 
 const styles = StyleSheet.create({
     containerHeader: {
-        flex: 2,
+        flex: 1,
+        padding: 20,
         backgroundColor: themes.primary,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center'
     },
     headerTitle: {
-        fontSize: 30,
+        fontSize: 20,
         color: themes.white,
-        fontFamily: 'Poppins-Bold'
+        fontFamily: 'Poppins-Medium'
     }
 })
