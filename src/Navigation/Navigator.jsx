@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, StatusBar, Pressable } from 'react-native';
 import React from 'react';
 import Header from '../Components/Header';
 import ItemListCategory from '../Screens/ItemListCategory';
@@ -14,16 +14,19 @@ const Navigator = () => {
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName='Home'
-          screenOptions={
-            ({route}) => (
-              {
-                header: () => {
-                  return <Header />
-                }
+              initialRouteName='Home'
+              screenOptions={
+                ({route}) => (
+                  {
+                    header: ({route, navigation}) => {
+                      return <Header 
+                              route = {route}
+                              navigation = {navigation}
+                            />
+                    }
+                  }
+                )
               }
-            )
-          }
         >
           <Stack.Screen 
               name='Home'

@@ -17,7 +17,6 @@ const ItemListCategory = ({
   const [keywordError, setKeywordError] = useState("")
 
   useEffect(()=> {
-    //Lógica de manejo de category
     const productsFiltered = productsRaw.filter(product => product.category === category && product.title.toLocaleLowerCase().includes(keyword.toLowerCase()))
     setProducts(productsFiltered)
 

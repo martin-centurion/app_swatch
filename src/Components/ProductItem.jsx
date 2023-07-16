@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import React from 'react';
 import Card from './Card';
 import { themes } from '../Global/Themes';
@@ -9,25 +9,29 @@ const ProductItem = ({
 }) => {
 
   const onSelect = (id) => {
-      navigation.navigate('ItemDetail', {productId: item.id})
+      navigation.navigate('ItemDetail', {productId: item.id, title: item.title})
   }
 
+  const {width} = useWindowDimensions();
+
   return (
-    <Pressable onPress={() => onSelect(item.id)}>
-          <Card
-            additionalStyle={styles.additionalStylesCard}
-          >   
-              <View style={styles.containerTextProduct}>
-                  <Text style={styles.textTitle}>{item.title}</Text>
-                  <Text style={styles.textPrice}>${item.price}</Text>
-              </View>
-              <Image 
-                resizeMode='cover'
-                style = {styles.image}
-                source={{uri: item.images[0]}}
-              />
-          </Card>
-    </Pressable>
+    <View style = {{width: width, alignItems: 'center'}}>
+      <Pressable onPress={() => onSelect(item.id)}>
+            <Card
+              additionalStyle={styles.additionalStylesCard}
+            >   
+                <View style={styles.containerTextProduct}>
+                    <Text style={styles.textTitle}>{item.title}</Text>
+                    <Text style={styles.textPrice}>${item.price}</Text>
+                </View>
+                <Image 
+                  resizeMode='cover'
+                  style = {styles.image}
+                  source={{uri: item.images[0]}}
+                />
+            </Card>
+      </Pressable>
+    </View>
   )
 }
 
