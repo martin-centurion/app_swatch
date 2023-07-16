@@ -1,12 +1,13 @@
-import { Button, FlatList, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from "react";
 import allProducts from "../Data/products.json";
 import { themes } from "../Global/Themes";
 import { AntDesign } from '@expo/vector-icons';
 
-const ItemDetail = ({ idSelected, setProductSelected }) => {
-    console.log(idSelected);
+const ItemDetail = ({ navigation, route }) => {
 
+    const {productId: idSelected} = route.params;
+    
     const [product, setProduct] = useState(null);
     const [orientation, setOrientation] = useState("portrait")
     const {width, height} = useWindowDimensions()
@@ -19,18 +20,16 @@ const ItemDetail = ({ idSelected, setProductSelected }) => {
     console.log(orientation);
 
     useEffect(() => {
-        //Encontrar el producto por su id
         const productSelected = allProducts.find(
             (product) => product.id === idSelected
         );
         setProduct(productSelected);
     }, [idSelected]);
 
-    console.log(product);
 
     return (
       <View style = {styles.containerDetail}>
-          <Pressable style={styles.buttonContainer} onPress={() => setProductSelected("")}>
+          <Pressable style={styles.buttonContainer} onPress={() => navigation.goBack()}>
             <Text style={styles.buttonBackProduct}>
                 <AntDesign name="back" size={24} color={themes.secondary} />
             </Text>

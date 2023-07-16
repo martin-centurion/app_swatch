@@ -5,13 +5,11 @@ import { themes } from '../Global/Themes';
 
 const ProductItem = ({ 
   item,
-  setProductSelected,
-  setCategorySelected
+  navigation
 }) => {
 
   const onSelect = (id) => {
-      setProductSelected(id)
-      setCategorySelected("")
+      navigation.navigate('ItemDetail', {productId: item.id})
   }
 
   return (

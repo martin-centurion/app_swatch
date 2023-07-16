@@ -14,7 +14,6 @@ export default Header
 
 const styles = StyleSheet.create({
     containerHeader: {
-        flex: 1,
         padding: 20,
         backgroundColor: themes.primary,
         alignItems: 'flex-start',

@@ -5,7 +5,7 @@ import { themes } from '../Global/Themes';
 import CategoryItem from '../Components/CategoryItem';
 
 const Home = ({
-    setCategorySelected
+    navigation
 }) => {
   return (
     <View style={styles.containerHome}>
@@ -13,7 +13,7 @@ const Home = ({
             <FlatList 
                 data={categories}
                 keyExtractor={category => category}
-                renderItem={({item}) => CategoryItem({item, setCategorySelected})}
+                renderItem={({item}) => <CategoryItem item={item} navigation = {navigation} />}
                 showsVerticalScrollIndicator={false}
             />
         </View>
@@ -25,7 +25,6 @@ export default Home
 
 const styles = StyleSheet.create({
     containerHome: {
-       flex: 8,
        alignItems: 'center'
     },
     categoryText: {

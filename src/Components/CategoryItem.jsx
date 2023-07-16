@@ -5,11 +5,11 @@ import { themes } from '../Global/Themes';
 
 const CategoryItem = ({
     item,
-    setCategorySelected
+    navigation
 }) => {
   return (
     <Pressable
-        onPress={() => setCategorySelected(item)}
+        onPress={() => navigation.navigate('ItemListCategory', {category: item})}
     >
       <Card>
              <Text style={styles.categoryText}>{item}</Text>
