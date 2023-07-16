@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Card from './Card';
+import { themes } from '../Global/Themes';
 
 const CategoryItem = ({
     item,
@@ -22,6 +23,7 @@ export default CategoryItem
 const styles = StyleSheet.create({
     categoryText: {
         fontSize: 18,
-        fontFamily: 'Poppins-Medium'
+        fontFamily: 'Poppins-Medium',
+        color: themes.secondary
     }
 })

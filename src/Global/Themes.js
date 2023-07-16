@@ -1,7 +1,8 @@
 export const themes = {
-    primary: "#1B1A17",
+    primary: "#171717",
     secondary: "#F5F5F5",
-    terciary: "#D4ECDD",
+    terciary: "#DA0037",
     white: "#FFFFFF",
+    text: "#1a1a1a",
     import: "",
 }

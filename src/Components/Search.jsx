@@ -17,6 +17,7 @@ const Search = ({
     <View style ={width > 320 ? styles.container : styles.containerSm}>
         <TextInput style ={styles.input} 
             placeholder='Buscar'
+            color={themes.secondary}
             value={keyword}
             onChangeText={setKeyword}
         />
@@ -59,5 +60,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         backgroundColor: themes.terciary,
         borderRadius: 10,
+        color: themes.secondary
     }
 })

@@ -32,7 +32,10 @@ export default function App() {
               setProductSelected={setProductSelected}
           /> :
           productSelected ?
-          <ItemDetail/> :
+          <ItemDetail
+              idSelected= {productSelected}
+              setProductSelected = {setProductSelected}
+          /> :
           <Home 
             setCategorySelected={setCategorySelected}
           />

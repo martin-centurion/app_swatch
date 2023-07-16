@@ -14,8 +14,6 @@ const ProductItem = ({
       setCategorySelected("")
   }
 
-  console.warn(setCategorySelected);
-
   return (
     <Pressable onPress={() => onSelect(item.id)}>
           <Card
@@ -45,12 +43,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'Poppins-Light',
     marginBottom: 3,
-    width: '90%'
+    width: '90%',
+    color: themes.secondary
   },
   textPrice: {
     fontSize: 16,
     fontFamily: 'Poppins-Bold',
-    color: themes.primary
+    color: themes.secondary
   },
   image: {
     height: 120,
