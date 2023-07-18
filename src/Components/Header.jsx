@@ -7,7 +7,7 @@ const Header = ({route, navigation}) => {
 
   let title;
 
-  if (route.name === 'Home') title = "Categorias";
+  if (route.name === 'Home') title = "Bienvenidos a Swatch ©";
   if (route.name === 'ItemListCategory') title = route.params.category;
   if (route.name === 'ItemDetail') title = route.params.title;
 
@@ -19,7 +19,7 @@ const Header = ({route, navigation}) => {
             <Pressable 
               style={styles.pressable}
               onPress={() => navigation.goBack()}>
-              <Ionicons name="ios-chevron-back-outline" size={24} color={themes.secondary} />
+              <Ionicons name="arrow-back" size={24} color={themes.secondary} />
             </Pressable> : null
           }
     </View>
@@ -31,22 +31,23 @@ export default Header;
 const styles = StyleSheet.create({
     containerHeader: {
         flexDirection: 'row',
-        padding: 20,
+        padding: 30,
         backgroundColor: themes.primary,
         alignItems: 'flex-start',
         justifyContent: 'center',
         position: 'relative'
     },
     headerTitle: {
-        fontSize: 20,
+        fontSize: 18,
         color: themes.white,
         fontFamily: 'Poppins-Medium'
     },
     pressable: {
         backgroundColor: themes.terciary,
-        padding: 19,
+        padding: 17,
+        borderRadius: 50,
         position: 'absolute',
-        right: 0,
-        top: 0
+        right: 10,
+        top: '50%'
     }
 })

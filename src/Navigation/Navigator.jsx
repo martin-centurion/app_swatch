@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, StatusBar, Pressable } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, StatusBar } from 'react-native';
 import React from 'react';
 import Header from '../Components/Header';
 import ItemListCategory from '../Screens/ItemListCategory';
@@ -22,7 +22,7 @@ const Navigator = () => {
                       return <Header 
                               route = {route}
                               navigation = {navigation}
-                            />
+                             />
                     }
                   }
                 )

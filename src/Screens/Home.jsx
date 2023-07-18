@@ -3,6 +3,7 @@ import React from 'react';
 import categories from '../Data/categories.json';
 import { themes } from '../Global/Themes';
 import CategoryItem from '../Components/CategoryItem';
+import Banner from '../Components/Banner';
 
 const Home = ({
     navigation
@@ -10,6 +11,7 @@ const Home = ({
   return (
     <View style={styles.containerHome}>
         <View>
+            <Banner />
             <FlatList 
                 data={categories}
                 keyExtractor={category => category}
@@ -25,6 +27,7 @@ export default Home
 
 const styles = StyleSheet.create({
     containerHome: {
+       flex: 2,
        alignItems: 'center'
     },
     categoryText: {

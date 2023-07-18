@@ -29,11 +29,6 @@ const ItemDetail = ({ navigation, route }) => {
 
     return (
       <View style = {styles.containerDetail}>
-          {/* <Pressable style={styles.buttonContainer} onPress={() => navigation.goBack()}>
-            <Text style={styles.buttonBackProduct}>
-                <AntDesign name="back" size={24} color={themes.secondary} />
-            </Text>
-          </Pressable> */}
             {product ? (
               <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape} >
                   
