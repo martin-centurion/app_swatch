@@ -32,7 +32,7 @@ const Navigator = () => {
                             console.log(focused);
                             return (
                                 <View>
-                                   <SimpleLineIcons name="home" size={24} color={focused ? "white" : "gray"} />
+                                   <SimpleLineIcons name="home" size={20} color={focused ? "white" : "gray"} />
                                 </View>
                             )
                         }
@@ -45,7 +45,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="bag" size={24} color={focused ? "white" : "gray"} />  
+                                    <SimpleLineIcons name="bag" size={20} color={focused ? "white" : "gray"} />  
                                 </View>
                             )
                         }
@@ -58,7 +58,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="list" size={24} color={focused ? "white" : "gray"} />   
+                                    <SimpleLineIcons name="list" size={20} color={focused ? "white" : "gray"} />   
                                 </View>
                             )
                         }
@@ -80,10 +80,10 @@ const styles = StyleSheet.create({
     tabBar: {
         backgroundColor: themes.text,
         position: 'absolute',
-        bottom: 15,
+        bottom: 0,
         left: 50,
         right: 50,
         borderRadius: 10,
-        height: 70,
+        height: 60,
     }
   })
