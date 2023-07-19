@@ -7,9 +7,10 @@ const ProductItem = ({
   item,
   navigation
 }) => {
-
+console.log(navigation);
   const onSelect = (id) => {
-      navigation.navigate('ItemDetail', {productId: item.id, title: item.title})
+    
+     navigation.navigate('ItemDetail', {productId: item.id, title: item.title})
   }
 
   const {width} = useWindowDimensions();

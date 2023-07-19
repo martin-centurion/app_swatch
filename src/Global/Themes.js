@@ -4,5 +4,5 @@ export const themes = {
     terciary: "#DA0037",
     white: "#FFFFFF",
     text: "#1a1a1a",
-    import: "",
+    tab: "",
 }

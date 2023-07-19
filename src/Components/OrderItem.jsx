@@ -1,24 +1,31 @@
 import { StyleSheet, Text, View } from "react-native";
+import { SimpleLineIcons } from '@expo/vector-icons';
 import React from "react";
-import { Feather } from '@expo/vector-icons';
 import { themes } from "../Global/Themes";
 
-const CartItem = ({ cartItem }) => {
-    console.log(cartItem);
+
+const OrderItem = ({ order }) => {
+    const total = order.items.reduce(
+        (acc, currentItem) => (acc += currentItem.price * currentItem.quantity),
+        0
+    );
+
     return (
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
-                <Text style={styles.text}>{cartItem.title} ({cartItem.quantity})</Text>
-                <Text style={styles.text2}>${cartItem.price}</Text>
+                <Text style={styles.text}>
+                    {new Date(order.createdAt).toLocaleString()}
+                </Text>
+                <Text style={styles.text2}>${total}</Text>
             </View>
-            <View style={styles.iconsCart}>
-                <Feather name="x-circle" size={24} color={themes.secondary} />
+            <View style={styles.iconsOrder}>
+                <SimpleLineIcons name="eye" size={24} color={themes.secondary} />
             </View>
         </View>
     );
 };
 
-export default CartItem;
+export default OrderItem;
 
 const styles = StyleSheet.create({
     card: {
@@ -39,7 +46,7 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
     },
     text: {
-        fontFamily: "Poppins-Medium",
+        fontFamily: "Poppins-Regular",
         fontSize: 12,
         color: themes.secondary,
     },
@@ -49,7 +56,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         color: themes.terciary,
     },
-    iconsCart: {
+    iconsOrder: {
         padding: 10
     }
 });

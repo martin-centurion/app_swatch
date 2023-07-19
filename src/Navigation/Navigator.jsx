@@ -5,11 +5,11 @@ import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'react-native'
 import ShopStack from './ShopStack'
 import CartStack from './CartStack'
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Fontisto } from '@expo/vector-icons';
-import { Foundation } from '@expo/vector-icons';
+import { SimpleLineIcons } from '@expo/vector-icons';
 import { themes } from '../Global/Themes'
+import OrderStack from './OrderStack'
+import { Feather } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator()
 
@@ -32,7 +32,7 @@ const Navigator = () => {
                             console.log(focused);
                             return (
                                 <View>
-                                    <Fontisto name="shopping-store" size={24} color={focused ? "white" : "gray"} />
+                                   <SimpleLineIcons name="home" size={24} color={focused ? "white" : "gray"} />
                                 </View>
                             )
                         }
@@ -45,7 +45,20 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <Foundation name="shopping-cart" size={30} color={focused ? "black": "gray"} />    
+                                    <SimpleLineIcons name="bag" size={24} color={focused ? "white" : "gray"} />  
+                                </View>
+                            )
+                        }
+                    }}
+                />
+                <Tab.Screen
+                    name='Orders'
+                    component={OrderStack}
+                    options={{
+                        tabBarIcon: ({focused}) => {
+                            return (
+                                <View>
+                                    <SimpleLineIcons name="list" size={24} color={focused ? "white" : "gray"} />   
                                 </View>
                             )
                         }
@@ -65,14 +78,12 @@ const styles = StyleSheet.create({
       paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
     tabBar: {
-        backgroundColor: themes.primary,
-        shadowColor: 'black',
-        elevation: 4,
+        backgroundColor: themes.text,
         position: 'absolute',
-        bottom: 25,
-        left: 20,
-        right: 20,
-        borderRadius: 15,
-        height: 90,
+        bottom: 15,
+        left: 50,
+        right: 50,
+        borderRadius: 10,
+        height: 70,
     }
   })

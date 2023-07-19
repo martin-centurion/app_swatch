@@ -10,6 +10,8 @@ const Header = ({route, navigation}) => {
   if (route.name === 'Home') title = "Bienvenidos a Swatch ©";
   if (route.name === 'ItemListCategory') title = route.params.category;
   if (route.name === 'ItemDetail') title = route.params.title;
+  if (route.name === 'CartScreen') title = "Tu Carrito";
+  if (route.name === 'OrderScreen') title = "Ordenes de Compra";
 
   return (
     <View style={styles.containerHeader}>
