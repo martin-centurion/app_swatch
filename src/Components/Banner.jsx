@@ -14,7 +14,7 @@ const Banner = () => {
           <Image 
               resizeMode='cover'
               style = {styles.image}
-              source={{url: 'https://static.swatch.com/images/product/SB06W100/sa280/SB06W100_sa280_er003.png'}}
+              source={{uri: 'https://static.swatch.com/images/product/SB06W100/sa280/SB06W100_sa280_er003.png'}}
           />
         </View>
       </Pressable>
@@ -52,9 +52,9 @@ const styles = StyleSheet.create({
         top: 220
     },
     image: {
-      width: 300,
-      height: 300,
-      position: 'absolute',
-      left: 100
+        width: 300,
+        height: 300,
+        position: 'absolute',
+        left: 100
     }
 })

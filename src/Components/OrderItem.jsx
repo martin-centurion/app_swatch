@@ -19,7 +19,7 @@ const OrderItem = ({ order }) => {
                 <Text style={styles.text2}>${total}</Text>
             </View>
             <View style={styles.iconsOrder}>
-                <SimpleLineIcons name="eye" size={24} color={themes.secondary} />
+                <SimpleLineIcons name="eye" size={20} color={themes.hover} />
             </View>
         </View>
     );
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
         backgroundColor: themes.primary,
         padding: 20,
         margin: 10,
-        borderWidth: 2,
         borderRadius: 10,
         flexDirection: "row",
         justifyContent: "space-between",
@@ -46,15 +45,15 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
     },
     text: {
-        fontFamily: "Poppins-Regular",
-        fontSize: 12,
+        fontFamily: "Poppins-Light",
+        fontSize: 14,
         color: themes.secondary,
     },
     text2: {
         fontFamily: "Poppins-Bold",
         fontSize: 30,
         marginTop: 5,
-        color: themes.terciary,
+        color: themes.terciary
     },
     iconsOrder: {
         padding: 10

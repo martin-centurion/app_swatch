@@ -9,7 +9,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { themes } from '../Global/Themes'
 import OrderStack from './OrderStack'
-import { Feather } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator()
 
@@ -32,7 +31,7 @@ const Navigator = () => {
                             console.log(focused);
                             return (
                                 <View>
-                                   <SimpleLineIcons name="home" size={20} color={focused ? "white" : "gray"} />
+                                   <SimpleLineIcons name="home" size={20} color={focused ? themes.terciary : themes.hover} />
                                 </View>
                             )
                         }
@@ -45,7 +44,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="bag" size={20} color={focused ? "white" : "gray"} />  
+                                    <SimpleLineIcons name="bag" size={20} color={focused ? themes.terciary : themes.hover} />  
                                 </View>
                             )
                         }
@@ -58,7 +57,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="list" size={20} color={focused ? "white" : "gray"} />   
+                                    <SimpleLineIcons name="list" size={20} color={focused ? themes.terciary : themes.hover} />   
                                 </View>
                             )
                         }
@@ -78,12 +77,12 @@ const styles = StyleSheet.create({
       paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
     tabBar: {
-        backgroundColor: themes.text,
-        position: 'absolute',
+        backgroundColor: themes.white,
+        //position: 'absolute',
         bottom: 0,
-        left: 50,
-        right: 50,
-        borderRadius: 10,
+        //left: 50,
+        //right: 50,
+        //borderRadius: 10,
         height: 60,
     }
   })
