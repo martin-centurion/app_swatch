@@ -19,7 +19,7 @@ const OrderItem = ({ order }) => {
                 <Text style={styles.text2}>${total}</Text>
             </View>
             <View style={styles.iconsOrder}>
-                <SimpleLineIcons name="eye" size={20} color={themes.hover} />
+                <SimpleLineIcons name="eye" size={20} color={themes.secondary} />
             </View>
         </View>
     );

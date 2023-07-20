@@ -4,6 +4,7 @@ import categories from '../Data/categories.json';
 import { themes } from '../Global/Themes';
 import CategoryItem from '../Components/CategoryItem';
 import Banner from '../Components/Banner';
+import Counter from '../Components/Counter';
 
 const Home = ({
     navigation

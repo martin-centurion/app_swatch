@@ -12,7 +12,7 @@ const CartItem = ({ cartItem }) => {
                 <Text style={styles.text2}>${cartItem.price}</Text>
             </View>
             <View style={styles.iconsCart}>
-                <Feather name="x-circle" size={20} color={themes.hover} />
+                <Feather name="x-circle" size={20} color={themes.secondary} />
             </View>
         </View>
     );

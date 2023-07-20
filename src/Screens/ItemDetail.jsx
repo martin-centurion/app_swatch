@@ -31,12 +31,14 @@ const ItemDetail = ({ navigation, route }) => {
       <View style = {styles.containerDetail}>
             {product ? (
               <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape} >
+                    
                   
                     <Image
                         source={{ uri: product.images[0] }}
                         style={styles.image}
-                        resizeMode="cover"
+                        resizeMode="contain"
                     />
+
                     <View style = {styles.textContainer}>
                       <Text style = {styles.productTitle}>{product.title}</Text>
                       <Text style = {styles.productText} >{product.description}</Text>
@@ -60,7 +62,6 @@ export default ItemDetail;
 
 const styles = StyleSheet.create({
   containerDetail: {
-    height: '90%'
   },
   buttonContainer: {
     alignItems: 'flex-end'
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20
+    padding: 0
   },
   mainContainerLandscape: {
     flexDirection: 'row',
@@ -82,8 +83,8 @@ const styles = StyleSheet.create({
     padding: 20
   },
   image: {
-    width: 250,
-    height: 250,
+    width: 300,
+    height: 300,
     marginBottom: 15
   },
   productTitle: {

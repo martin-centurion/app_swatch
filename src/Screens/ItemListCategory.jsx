@@ -38,21 +38,21 @@ const ItemListCategory = ({
 
   return (
     <View style={styles.container}>
-        <Search
-          onSearch={onSearch}
-          error={keywordError}
-          goBack={() => navigation.goBack()}
-        />
-        <FlatList
-            data = {products}
-            keyExtractor={product => product.id}
-            renderItem={({item}) => <ProductItem 
-            item={item}
-            navigation={navigation}
-          />}
+          <Search
+              onSearch={onSearch}
+              error={keywordError}
+              goBack={() => navigation.goBack()}
+          />
+          <FlatList
+              data = {products}
+              keyExtractor={product => product.id}
+              renderItem={({item}) => <ProductItem 
+              item={item}
+              navigation={navigation}
+              />}
             
-            showsVerticalScrollIndicator={false}
-        />
+              showsVerticalScrollIndicator={false}
+          />
     </View>
   )
 }

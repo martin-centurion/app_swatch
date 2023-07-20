@@ -31,7 +31,7 @@ const Navigator = () => {
                             console.log(focused);
                             return (
                                 <View>
-                                   <SimpleLineIcons name="home" size={20} color={focused ? themes.terciary : themes.hover} />
+                                   <SimpleLineIcons name="home" size={24} color={focused ? themes.terciary : themes.hover} />
                                 </View>
                             )
                         }
@@ -44,7 +44,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="bag" size={20} color={focused ? themes.terciary : themes.hover} />  
+                                    <SimpleLineIcons name="bag" size={24} color={focused ? themes.terciary : themes.hover} />  
                                 </View>
                             )
                         }
@@ -57,7 +57,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="list" size={20} color={focused ? themes.terciary : themes.hover} />   
+                                    <SimpleLineIcons name="list" size={24} color={focused ? themes.terciary : themes.hover} />   
                                 </View>
                             )
                         }
