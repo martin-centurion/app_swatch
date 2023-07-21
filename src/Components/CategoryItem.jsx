@@ -2,6 +2,8 @@ import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-na
 import React from 'react';
 import Card from './Card';
 import { themes } from '../Global/Themes';
+import { useDispatch } from 'react-redux';
+import { setCategorySelected } from '../Features/Shop/shopSlice';
 
 const CategoryItem = ({
     item,
@@ -10,10 +12,17 @@ const CategoryItem = ({
 
   const {width} = useWindowDimensions();
 
+  const dispatch = useDispatch()
+
+  const onSelectCategory = () => {
+      dispatch(setCategorySelected(item))
+      navigation.navigate('ItemListCategory', {category: item})
+  }
+
   return (
     <View style={{width: width, alignItems: 'center'}}>
       <Pressable
-          onPress={() => navigation.navigate('ItemListCategory', {category: item})}
+          onPress={onSelectCategory}
       >
         <Card>
               <Text style={styles.categoryText}>{item}</Text>
