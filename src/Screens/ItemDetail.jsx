@@ -9,8 +9,8 @@ const ItemDetail = ({ navigation, route }) => {
     const {productId: idSelected} = route.params;
     
     const [product, setProduct] = useState(null);
-    const [orientation, setOrientation] = useState("portrait")
-    const {width, height} = useWindowDimensions()
+    const [orientation, setOrientation] = useState("portrait");
+    const {width, height} = useWindowDimensions();
 
     useEffect(()=> {
       if (width > height) setOrientation("landscape")
