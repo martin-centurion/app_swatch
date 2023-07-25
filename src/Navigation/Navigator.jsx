@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, View } from 'react-native'
+import { Platform, SafeAreaView, StyleSheet, View } from 'react-native'
 import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native'
@@ -69,7 +69,7 @@ const Navigator = () => {
   )
 }
 
-export default Navigator
+export default Navigator;
 
 const styles = StyleSheet.create({
     container: {
@@ -78,11 +78,7 @@ const styles = StyleSheet.create({
     },
     tabBar: {
         backgroundColor: themes.white,
-        //position: 'absolute',
         bottom: 0,
-        //left: 50,
-        //right: 50,
-        //borderRadius: 10,
         height: 60,
     }
   })
