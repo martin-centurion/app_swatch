@@ -1,1 +1,1 @@
-export const realtime_database_url = ''
+export const realtime_database_url = 'https://swatch-app-65e59-default-rtdb.firebaseio.com/'

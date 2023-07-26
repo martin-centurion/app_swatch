@@ -1,19 +1,26 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import categories from '../Data/categories.json';
 import { themes } from '../Global/Themes';
 import CategoryItem from '../Components/CategoryItem';
 import Banner from '../Components/Banner';
 import Counter from '../Components/Counter';
+import { useGetCategoriesQuery } from '../Services/shopServices';
 
 const Home = ({
     navigation
 }) => {
+    
+    const {data: categories, isLoading, isError} = useGetCategoriesQuery();
+
+    console.log(isLoading);
+    console.log(isError);
+
   return (
+
     <View style={styles.containerHome}>
         <View>
-            <Counter />
-            {/* <Banner /> */}
+            {/* <Counter /> */}
+            <Banner />
             <FlatList 
                 data={categories}
                 keyExtractor={category => category}
@@ -25,7 +32,7 @@ const Home = ({
   )
 }
 
-export default Home
+export default Home;
 
 const styles = StyleSheet.create({
     containerHome: {

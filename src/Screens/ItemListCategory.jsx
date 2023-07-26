@@ -4,6 +4,7 @@ import ProductItem from '../Components/ProductItem'
 import Search from '../Components/Search'
 import { themes } from '../Global/Themes'
 import { useSelector } from 'react-redux'
+import { useGetProductsByCategoryQuery } from '../Services/shopServices'
 
 const ItemListCategory = ({
   navigation,
@@ -12,16 +13,19 @@ const ItemListCategory = ({
 
   const {category} = route.params;
 
-  const productsSelected = useSelector (state => state.shopReducer.value.productsSelected)
+  //const productsSelected = useSelector (state => state.shopReducer.value.productsSelected)
+  const categorySelected = useSelector (state => state.shopReducer.value.categorySelected)
+  const {data: productsSelected, isError, isLoadind} = useGetProductsByCategoryQuery(categorySelected)
 
   const [products, setProducts] = useState([])
   const [keyword, setKeyword] = useState("")
   const [keywordError, setKeywordError] = useState("")
 
   useEffect(()=> {
-    const productsFiltered = productsSelected.filter(product => product.title.toLocaleLowerCase().includes(keyword.toLowerCase()))
-    setProducts(productsFiltered)
-
+    if (productsSelected) {
+      const productsFiltered = productsSelected.filter(product => product.title.toLocaleLowerCase().includes(keyword.toLowerCase()))
+      setProducts(productsFiltered)
+    }
   }, [productsSelected, keyword])
 
   const onSearch = (input) => {

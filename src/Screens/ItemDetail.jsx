@@ -1,12 +1,15 @@
-import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { Button, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from "react";
 import allProducts from "../Data/products.json";
 import { themes } from "../Global/Themes";
-import { AntDesign } from '@expo/vector-icons';
+import { useDispatch } from "react-redux";
+import { addCartItem } from "../Features/Cart/cartSlice";
 
 const ItemDetail = ({ navigation, route }) => {
 
     const {productId: idSelected} = route.params;
+
+    const dispatch = useDispatch()
     
     const [product, setProduct] = useState(null);
     const [orientation, setOrientation] = useState("portrait");
@@ -26,6 +29,13 @@ const ItemDetail = ({ navigation, route }) => {
         setProduct(productSelected);
     }, [idSelected]);
 
+    const onAddCart = () => {
+        dispatch(addCartItem({
+          ...product, 
+          quantity: 1
+        }))
+        console.log('onPress');
+    }
 
     return (
       <View style = {styles.containerDetail}>
@@ -48,7 +58,10 @@ const ItemDetail = ({ navigation, route }) => {
             ) : null}
             
 
-                      <Pressable style={styles.buttonAddProductContainer}>
+                      <Pressable 
+                          style={styles.buttonAddProductContainer}
+                          onPress={onAddCart}
+                      >
                           <Text style={styles.buttonAddProduct}>
                               Agregar Al Carrito
                           </Text>
