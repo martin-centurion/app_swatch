@@ -100,6 +100,9 @@ const styles = StyleSheet.create({
     height: 300,
     marginBottom: 15
   },
+  textContainer: {
+    paddingHorizontal: 30
+  },
   productTitle: {
     fontSize: 30,
     fontFamily: 'Poppins-Bold',
@@ -120,6 +123,7 @@ const styles = StyleSheet.create({
   },
   buttonAddProductContainer: {
     margin: 0,
+    marginTop: 10,
     alignItems: 'center',
     justifyContent: 'center'
   },

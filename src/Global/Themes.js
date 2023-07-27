@@ -3,6 +3,6 @@ export const themes = {
     secondary: "#F5F5F5",
     terciary: "#DA0037",
     white: "#FFFFFF",
-    hover: "#6D5D6E",
+    hover: "#e5e5e5",
     text: "#1a1a1a",
 }

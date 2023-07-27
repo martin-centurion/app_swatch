@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Feather } from '@expo/vector-icons';
 import { themes } from "../Global/Themes";
@@ -8,11 +8,18 @@ const CartItem = ({ cartItem }) => {
     return (
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
-                <Text style={styles.text}>{cartItem.title} ({cartItem.quantity})</Text>
+                <Text style={styles.text}>{cartItem.title} {cartItem.quantity} Un.</Text>
                 <Text style={styles.text2}>${cartItem.price}</Text>
             </View>
+            <View>
+                <Image
+                    source={{ uri: cartItem.images[0] }}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
+            </View>
             <View style={styles.iconsCart}>
-                <Feather name="x-circle" size={20} color={themes.secondary} />
+                <Feather name="x-circle" size={20} color={themes.terciary} />
             </View>
         </View>
     );
@@ -23,7 +30,7 @@ export default CartItem;
 const styles = StyleSheet.create({
     card: {
         height: 100,
-        backgroundColor: themes.primary,
+        backgroundColor: themes.hover,
         padding: 20,
         margin: 10,
         borderRadius: 10,
@@ -38,9 +45,9 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
     },
     text: {
-        fontFamily: "Poppins-Light",
+        fontFamily: "Poppins-Bold",
         fontSize: 14,
-        color: themes.secondary,
+        color: themes.primary,
     },
     text2: {
         fontFamily: "Poppins-Bold",
@@ -48,7 +55,11 @@ const styles = StyleSheet.create({
         marginTop: 5,
         color: themes.terciary
     },
+    image: {
+        width: 80,
+        height: 80
+    },
     iconsCart: {
-        padding: 10
+        padding: 5
     }
 });
