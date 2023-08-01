@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { themes } from '../Global/Themes'
 
-const Card = ( {children} ) => {
+const ProductItemCard = ( {children} ) => {
   return (
     <View style={styles.cardContainer}>
       { children }
@@ -10,17 +10,17 @@ const Card = ( {children} ) => {
   )
 }
 
-export default Card;
+export default ProductItemCard;
 
 const styles = StyleSheet.create({
     cardContainer: {
-        width: 200,
+        width: 350,
         height: 120,
         padding: 20,
         borderRadius: 10,
         backgroundColor: themes.terciary,
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginVertical: 20
+        marginVertical: 10
     }
 })

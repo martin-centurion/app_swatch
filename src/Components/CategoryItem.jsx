@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import React from 'react';
 import Card from './Card';
 import { themes } from '../Global/Themes';
@@ -9,6 +9,7 @@ const CategoryItem = ({
     item,
     navigation
 }) => {
+ 
 
   const {width} = useWindowDimensions();
 
@@ -16,16 +17,28 @@ const CategoryItem = ({
 
   const onSelectCategory = () => {
       dispatch(setCategorySelected(item))
-      navigation.navigate('ItemListCategory', {category: item})
+      navigation.navigate('ItemListCategory', {category: item});
   }
 
   return (
-    <View style={{width: width, alignItems: 'center'}}>
+    
+    <View style={styles.container}>
       <Pressable
           onPress={onSelectCategory}
       >
         <Card>
-              <Text style={styles.categoryText}>{item}</Text>
+
+          <View style={styles.categoryContainer}>
+              <View>
+                <Text style={styles.categoryText}>{item}</Text>
+              </View>
+              <Image 
+                resizeMode='cover'
+                style = {styles.image}
+                source={{uri: "https://static.swatch.com/images/product/SS07S129G/sa200/SS07S129G_sa200_er005.png"}}
+              />
+          </View>
+
         </Card>
       </Pressable>
     </View>
@@ -35,9 +48,24 @@ const CategoryItem = ({
 export default CategoryItem
 
 const styles = StyleSheet.create({
+    container: {
+      marginHorizontal: 15
+    },
+    categoryContainer: {
+      width: "100%",
+      flexDirection: 'row',
+      justifyContent: "space-around",
+      alignItems: "center"
+    },
     categoryText: {
-        fontSize: 18,
-        fontFamily: 'Poppins-Medium',
-        color: themes.secondary
+      width: 80,
+      margin: 10,
+      fontSize: 14,
+      fontFamily: 'Poppins-Bold',
+      color: themes.secondary
+    },
+    image: {
+      width: 80,
+      height: 80
     }
 })

@@ -9,20 +9,27 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { themes } from '../Global/Themes'
 import OrderStack from './OrderStack'
+import AuthStack from './AuthStack'
+import { useSelector } from 'react-redux'
 
 const Tab = createBottomTabNavigator()
 
 const Navigator = () => {
+
+        const {email} = useSelector(state => state.userReducer.value)
+         
   return (
     <SafeAreaView style = {styles.container}>
         <NavigationContainer>
-            <Tab.Navigator
+            {
+                true ?
+                <Tab.Navigator
                 screenOptions={{
                     headerShown: false,
                     tabBarShowLabel: false,
                     tabBarStyle: styles.tabBar,
                 }}
-            >
+                >
                 <Tab.Screen 
                     name='Shop'
                     component={ShopStack}
@@ -64,6 +71,8 @@ const Navigator = () => {
                     }}
                 />
             </Tab.Navigator>
+            : <AuthStack />
+            }
         </NavigationContainer>
     </SafeAreaView>
   )

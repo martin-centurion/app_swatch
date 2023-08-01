@@ -18,14 +18,16 @@ const Home = ({
   return (
 
     <View style={styles.containerHome}>
-        <View>
+        <View style={styles.containerBody}>
             {/* <Counter /> */}
             <Banner />
-            <FlatList 
+            <FlatList
                 data={categories}
                 keyExtractor={category => category}
                 renderItem={({item}) => <CategoryItem item={item} navigation = {navigation} />}
                 showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+                horizontal={true}
             />
         </View>
     </View>

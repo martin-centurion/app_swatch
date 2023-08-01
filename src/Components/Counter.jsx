@@ -44,7 +44,7 @@ const Counter = () => {
             </View>
             <Pressable
                     style={styles.button}
-                    onPress={() => dispatch(reset())}
+                    onPress={() => {}}
             >
                 <Text style={styles.buttonText}>Reset</Text>
             </Pressable>

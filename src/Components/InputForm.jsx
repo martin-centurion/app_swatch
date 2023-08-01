@@ -45,20 +45,20 @@ const styles = StyleSheet.create({
     subtitle: {
         width: '90%',
         fontSize: 16,
-        fontFamily: 'Poppins-Bold'
+        fontFamily: 'Poppins-Medium'
     },
     error: {
         fontSize: 16,
         color: 'red',
-        fontFamily: 'Poppins-Bold'
+        fontFamily: 'Poppins-Medium'
     },
     input: {
         width: '90%',
         borderWidth: 0,
-        borderBottomWidth: 3,
+        borderBottomWidth: 2,
         borderBottomColor: themes.primary,
         padding: 2,
-        fontFamily: 'Poppins-Bold',
+        fontFamily: 'Poppins-Medium',
         fontSize: 14,
     }
 })

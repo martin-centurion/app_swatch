@@ -8,7 +8,7 @@
         "rating": 4.69,
         "stock": 94,
         "brand": "Swatch",
-        "category": "Relojes de hombres",
+        "category": "Hombres",
         "images": [
             "https://static.swatch.com/images/product/SS07S129G/sa200/SS07S129G_sa200_er005.png",
             "https://static.swatch.com/images/product/SS07S129G/li2/SS07S129G_li2_ec001.jpg",
@@ -25,7 +25,7 @@
         "rating": 4.69,
         "stock": 94,
         "brand": "Swatch",
-        "category": "Relojes de hombres",
+        "category": "Hombres",
         "images": [
             "https://static.swatch.com/images/product/SS07S125/sa200/SS07S125_sa200_er005.png"
         ]
@@ -39,7 +39,7 @@
         "rating": 4.69,
         "stock": 94,
         "brand": "Swatch",
-        "category": "Relojes de mujer",
+        "category": "Mujer",
         "images": [
             "https://static.swatch.com/images/product/GM416/sa200/GM416_sa200_er005.png"
         ]
@@ -53,7 +53,7 @@
         "rating": 4.69,
         "stock": 94,
         "brand": "Swatch",
-        "category": "Relojes de niños",
+        "category": "Niños",
         "images": [
             "https://static.swatch.com/flikflak/images/product/ZFBNP206/fa200/ZFBNP206_fa200_er007.png"
         ]
@@ -61,13 +61,13 @@
     {
         "id": 5,
         "title": "Be Hoppy!",
-        "description": "Los conejitos saltan con sus patinetes por el arcoíris del reloj educativo para niños BE HOPPY !, un regalo divertido para aprender a decir la hora.",
+        "description": "Los conejitos saltan con sus patinetes por el arcoíris del reloj educativo para Niños BE HOPPY !, un regalo divertido para aprender a decir la hora.",
         "price": 18.995,
         "discountPercentage": 12.96,
         "rating": 4.69,
         "stock": 94,
         "brand": "Swatch",
-        "category": "Relojes de niños",
+        "category": "Niños",
         "images": [
             "https://static.swatch.com/flikflak/images/product/ZFBNP207/fa200/ZFBNP207_fa200_er007.png"
         ]
@@ -81,7 +81,7 @@
         "rating": 4.69,
         "stock": 94,
         "brand": "Swatch",
-        "category": "Relojes de hombres",
+        "category": "Hombres",
         "images": [
             "https://static.swatch.com/images/product/SO29B109/sa200/SO29B109_sa200_er005.png"
         ]
@@ -95,7 +95,7 @@
         "rating": 4.69,
         "stock": 94,
         "brand": "Swatch",
-        "category": "Relojes de hombres",
+        "category": "Hombres",
         "images": [
             "https://static.swatch.com/images/product/SO29B109/sa200/SO29B109_sa200_er005.png"
         ]
@@ -109,7 +109,7 @@
         "rating": 4.69,
         "stock": 94,
         "brand": "Swatch",
-        "category": "Relojes de hombres",
+        "category": "Hombres",
         "images": [
             "https://static.swatch.com/images/product/SS07S128G/sa200/SS07S128G_sa200_er005.png"
         ]
@@ -123,7 +123,7 @@
         "rating": 4.69,
         "stock": 94,
         "brand": "Swatch",
-        "category": "Relojes de hombres",
+        "category": "Hombres",
         "images": [
             "https://static.swatch.com/images/product/YVS507G/sa200/YVS507G_sa200_er005.png"
         ]
