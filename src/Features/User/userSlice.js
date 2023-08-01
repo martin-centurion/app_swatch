@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-//import Products from '../../Data/products.json'
 
 export const userSlice = createSlice({
     name: "User",
@@ -7,6 +6,8 @@ export const userSlice = createSlice({
         value: {
             email: "",
             idToken: "",
+            localId: "",
+            profileImage: "",
         }
     },
     reducers: {
@@ -18,10 +19,13 @@ export const userSlice = createSlice({
                 email: "",
                 idToken: "",
             }
+        },
+        saveImage: (state, action) => {
+            state.value.profileImage = action.payload
         }
     }
 })
 
-export const {setUser, signOut} = userSlice.actions
+export const {setUser, signOut, saveImage} = userSlice.actions
 
 export default userSlice.reducer

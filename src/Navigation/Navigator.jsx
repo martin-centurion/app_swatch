@@ -6,11 +6,12 @@ import { StatusBar } from 'react-native'
 import ShopStack from './ShopStack'
 import CartStack from './CartStack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { SimpleLineIcons } from '@expo/vector-icons';
+import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
 import { themes } from '../Global/Themes'
 import OrderStack from './OrderStack'
 import AuthStack from './AuthStack'
 import { useSelector } from 'react-redux'
+import MyProfileStack from './MyProfileStack'
 
 const Tab = createBottomTabNavigator()
 
@@ -22,7 +23,7 @@ const Navigator = () => {
     <SafeAreaView style = {styles.container}>
         <NavigationContainer>
             {
-                true ?
+                email ?
                 <Tab.Navigator
                 screenOptions={{
                     headerShown: false,
@@ -44,6 +45,27 @@ const Navigator = () => {
                         }
                     }}
                 />
+                <Tab.Screen
+                        name="MyProfile"
+                        component={MyProfileStack}
+                        options={{
+                            tabBarIcon: ({ focused }) => {
+                                return (
+                                    <View style={styles.item}>
+                                        <Ionicons
+                                            name="person-circle-outline"
+                                            size={24}
+                                            color={
+                                                focused
+                                                    ? 'black'
+                                                    : 'gray'
+                                            }
+                                        />
+                                    </View>
+                                );
+                            },
+                        }}
+                    />
                 <Tab.Screen
                     name='Cart'
                     component={CartStack}
