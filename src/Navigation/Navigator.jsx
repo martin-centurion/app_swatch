@@ -1,12 +1,11 @@
 import { Platform, SafeAreaView, StyleSheet, View } from 'react-native'
 import React from 'react'
-
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'react-native'
 import ShopStack from './ShopStack'
 import CartStack from './CartStack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
+import { Feather, SimpleLineIcons } from '@expo/vector-icons';
 import { themes } from '../Global/Themes'
 import OrderStack from './OrderStack'
 import AuthStack from './AuthStack'
@@ -39,33 +38,12 @@ const Navigator = () => {
                             console.log(focused);
                             return (
                                 <View>
-                                   <SimpleLineIcons name="home" size={24} color={focused ? themes.terciary : themes.hover} />
+                                   <SimpleLineIcons name="home" size={24} color={focused ? themes.terciary : themes.primary} />
                                 </View>
                             )
                         }
                     }}
                 />
-                <Tab.Screen
-                        name="MyProfile"
-                        component={MyProfileStack}
-                        options={{
-                            tabBarIcon: ({ focused }) => {
-                                return (
-                                    <View style={styles.item}>
-                                        <Ionicons
-                                            name="person-circle-outline"
-                                            size={24}
-                                            color={
-                                                focused
-                                                    ? 'black'
-                                                    : 'gray'
-                                            }
-                                        />
-                                    </View>
-                                );
-                            },
-                        }}
-                    />
                 <Tab.Screen
                     name='Cart'
                     component={CartStack}
@@ -73,7 +51,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="bag" size={24} color={focused ? themes.terciary : themes.hover} />  
+                                    <SimpleLineIcons name="bag" size={24} color={focused ? themes.terciary : themes.primary} />  
                                 </View>
                             )
                         }
@@ -86,12 +64,26 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="list" size={24} color={focused ? themes.terciary : themes.hover} />   
+                                    <SimpleLineIcons name="list" size={24} color={focused ? themes.terciary : themes.primary} />   
                                 </View>
                             )
                         }
                     }}
                 />
+
+                <Tab.Screen
+                        name="MyProfile"
+                        component={MyProfileStack}
+                        options={{
+                            tabBarIcon: ({ focused }) => {
+                                return (
+                                    <View style={styles.item}>
+                                        <Feather name="user" size={28} color={focused ? themes.terciary : themes.primary} />
+                                    </View>
+                                );
+                            },
+                        }}
+                    />
             </Tab.Navigator>
             : <AuthStack />
             }

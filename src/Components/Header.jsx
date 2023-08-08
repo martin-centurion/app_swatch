@@ -41,7 +41,7 @@ const Header = ({route, navigation }) => {
                     <Pressable 
                       style={styles.pressable}
                       onPress={() => dispatch(signOut())}>
-                      <Feather name="user" size={28} color={themes.primary} />
+                      <Feather name="user-x" size={28} color={themes.primary} />
                   </Pressable> : null
                   }
             </View>

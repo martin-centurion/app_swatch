@@ -9,13 +9,12 @@ import { saveImage } from "../Features/User/userSlice";
 import { themes } from "../Global/Themes";
 
 const ImageSelector = ({ navigation }) => {
+
     const [image, setImage] = useState(null);
 
+    const [triggerSaveImage, resultSaveImage] = usePostProfileImageMutation();
     const dispatch = useDispatch();
-
-/*     const [triggerSaveImage, resultSaveImage] = usePostProfileImageMutation();
-    const dispatch = useDispatch();
-    const { localId } = useSelector((state) => state.userReducer.value); */
+    const { localId } = useSelector((state) => state.userReducer.value);
 
     const verifyCameraPermissions = async () => {
         const { granted } = await ImagePicker.requestCameraPermissionsAsync();
@@ -32,7 +31,7 @@ const ImageSelector = ({ navigation }) => {
             let result = await ImagePicker.launchCameraAsync({
                 mediaTypes: ImagePicker.MediaTypeOptions.All,
                 allowsEditing: true,
-                aspect: [9, 16],
+                aspect: [1, 1],
                 //base64: true,
                 quality: 1,
             });
@@ -46,9 +45,8 @@ const ImageSelector = ({ navigation }) => {
     };
 
     const confirmImage = async () => {
-        dispatch(saveImage(image))
-        navigation.goBack()
-        /* try {
+
+        try {
             // Request device storage access permission
             const { status } = await MediaLibrary.requestPermissionsAsync();
             if (status === "granted") {
@@ -67,7 +65,7 @@ const ImageSelector = ({ navigation }) => {
         } catch (error) {
             console.log(error);
         }
-        navigation.goBack(); */
+        navigation.goBack();
     };
 
     return (
@@ -75,15 +73,15 @@ const ImageSelector = ({ navigation }) => {
             {image ? (
                 <>
                     <Image source={{ uri: image }} style={styles.image} />
-                    <AddButton title="Take another photo" onPress={pickImage} />
-                    <AddButton title="Confirm photo" onPress={confirmImage} />
+                    <AddButton title="Tomar otra foto" onPress={pickImage} />
+                    <AddButton title="Confirmar" onPress={confirmImage} />
                 </>
             ) : (
                 <>
                     <View style={styles.noPhotoContainer}>
-                        <Text>No photo to show...</Text>
+                        <Text>No hay foto de perfil</Text>
                     </View>
-                    <AddButton title="Take a photo" onPress={pickImage} />
+                    <AddButton title="Tomar Foto" onPress={pickImage} />
                 </>
             )}
         </View>
@@ -108,9 +106,9 @@ const styles = StyleSheet.create({
         width: 200,
         height: 200,
         borderWidth: 2,
-        borderColor: themes.terciary,
+        borderColor: themes.primary,
         padding: 10,
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center"
     },
 });

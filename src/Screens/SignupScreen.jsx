@@ -73,7 +73,10 @@ const SignupScreen = ({ navigation }) => {
         <View style={styles.main}>
             <View style={styles.container}>
                 <Text style={styles.title}>Sign Up</Text>
-                <InputForm label={"Email"} onChange={setEmail} error={errorMail} />
+                <InputForm 
+                    label={"Email"} 
+                    onChange={setEmail} 
+                    error={errorMail} />
                 <InputForm
                     label={"Password"}
                     onChange={setPassword}

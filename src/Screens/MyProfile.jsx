@@ -1,18 +1,17 @@
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View } from 'react-native';
 import React, { useState } from "react";
 import AddButton from "../Components/AddButton";
 import * as ImagePicker from 'expo-image-picker';
-import { useSelector } from "react-redux";
-import { useGetProfileImageQuery } from "../Services/shopServices";
+import { useSelector } from 'react-redux';
+import { useGetProfileImageQuery } from '../Services/shopServices';
 
 const MyProfile = ({navigation}) => {
     // const {profileImage, imageCamera} = useSelector(state => state.authReducer.value);
 
     const {localId, profileImage} = useSelector(state => state.userReducer.value)
 
-/*     const {data: image} = useGetProfileImageQuery(localId)
-
-    const cameraImage = image?.image */
+    const {data: image} = useGetProfileImageQuery(localId)
+    const cameraImage = image?.image
 
     const launchCamera = async () => {
         navigation.navigate('Image Selector')
@@ -22,9 +21,9 @@ const MyProfile = ({navigation}) => {
 
     return (
         <View style={styles.container}>
-            {profileImage ? (
+            {profileImage || cameraImage ? (
                 <Image
-                    source={{uri: profileImage}}
+                    source={{uri: profileImage || cameraImage}}
                     style={styles.image}
                     resizeMode="cover"
                 />
@@ -35,7 +34,7 @@ const MyProfile = ({navigation}) => {
                     resizeMode="cover"
                 />
             )}
-            <AddButton onPress={launchCamera} title="Add profile picture" />
+            <AddButton onPress={launchCamera} title="Agregar Foto" />
         </View>
     );
 };
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
         padding: 10,
         gap: 15,
         alignItems: "center",
-        justifyContent: "flex-start",
+        justifyContent: "flex-start"
     },
     image: {
         width: 100,

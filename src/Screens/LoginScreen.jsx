@@ -1,46 +1,52 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import InputForm from '../Components/InputForm'
-import SubmitButton from '../Components/SubmitButton'
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import InputForm from "../Components/InputForm";
+import SubmitButton from "../Components/SubmitButton";
+import { useSignInMutation } from "../Services/authServices";
+import { isAtLeastSixCharacters, isValidEmail } from "../Validations/auth";
+import { useDispatch } from "react-redux";
+import { setUser } from "../Features/User/userSlice";
 import { themes } from '../Global/Themes'
-import { useDispatch } from 'react-redux'
 
 const LoginScreen = ({navigation}) => {
-
+    
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const [errorEmail, setErrorEmail] = useState('');
-    const [errorPassword, setErrorPassword] = useState('');
+    const [errorEmail, setErrorEmail] = useState('')
+    const [errorPassword, setErrorPassword] = useState('')
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-    const [triggerSignIn, resultSignIn] = useState();
+    const [triggerSignIn, resultSignIn] = useSignInMutation();
     const onSubmit = () => {
 
-        const isValidVariableEmail = isValidEmail(email);
+        //Submit logic with validations
+        const isValidVariableEmail = isValidEmail(email)
         const isCorrectPassword = isAtLeastSixCharacters(password)
-        
-        if(isValidVariableEmail && isCorrectPassword) {
+
+        if (isValidVariableEmail && isCorrectPassword) {
             triggerSignIn({
                 email,
                 password,
-                resultSecureToken: true
+                returnSecureToken: true,
             });
         }
 
         if (!isValidVariableEmail) setErrorEmail ('Email is not correct')
-            else setErrorEmail('')
-            if (!isCorrectPassword) setErrorPassword ('Password must be at least 6 characters')
-            else setErrorPassword('')
-
+        else setErrorEmail('')
+        if (!isCorrectPassword) setErrorPassword ('Password must be at least 6 characters')
+        else setErrorPassword('')
     };
 
-    useEffect(() => {
+    useEffect(()=> {
         if(resultSignIn.isSuccess) {
             dispatch(setUser({
                 email: resultSignIn.data.email,
-                idToken: resultSignIn.data.idToken
+                idToken: resultSignIn.data.idToken,
+                localId:  resultSignIn.data.localId,
+                profileImage: ''
             }))
         }
     }, [resultSignIn])

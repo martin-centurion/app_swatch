@@ -22,4 +22,7 @@ export const authApi = createApi({
     })
 })
 
-export const {useSignUpMutation, useSignInMutation} = authApi
+export const {
+    useSignUpMutation, 
+    useSignInMutation
+} = authApi
