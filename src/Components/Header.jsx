@@ -17,6 +17,8 @@ const Header = ({route, navigation }) => {
   if (route.name === 'ItemDetail') title = route.params.title;
   if (route.name === 'CartScreen') title = "Tu Carrito";
   if (route.name === 'OrderScreen') title = "Ordenes de Compra";
+  if (route.name === 'My Profile') title = "Mi perfil";
+  if (route.name === 'Image Selector') title = "Mi foto de perfil";
 
   const dispatch = useDispatch();
   const {email} = useSelector(state => state.userReducer.value)

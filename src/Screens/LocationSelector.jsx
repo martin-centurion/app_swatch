@@ -5,22 +5,45 @@ import AddButton from "../Components/AddButton";
 import { usePostUserLocationMutation } from "../Services/shopServices";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserLocation } from "../Features/User/userSlice";
-import { colors } from "../Global/Colors";
 import MapPreview from "../Components/MapPreview";
 import { google_maps_api_key } from "../Database/firebaseConfig";
+import { themes } from "../Global/Themes";
 
 const LocationSelector = ({ navigation }) => {
 
     const [location, setLocation] = useState({ latitude: "", longitude: "" });
     const [error, setError] = useState("");
 
-    const [address, setAddress] = useState(null);
+    const [address, setAddress] = useState("");
+
+    const [triggerPostUserLocation, resultPostUserLocation] = usePostUserLocationMutation()
+    const {localId} = useSelector(state => state.userReducer.value)
+    const dispatch = useDispatch()
 
     /* const {localId} = useSelector(state => state.userReducer.value)
     const [triggerPostAddress, result] = usePostUserLocationMutation();
     const dispatch = useDispatch(); */
 
+    console.log(location);
+
     const onConfirmAddress = () => {
+
+        const locationFormatted = {
+            latitude: location.latitude,
+            longitude: location.longitude,
+            address
+        }
+
+        dispatch(setUserLocation(
+            locationFormatted
+        ))
+
+        triggerPostUserLocation({
+            location: locationFormatted,
+            localId
+        })
+
+        navigation.goBack()
         /* const locationFormatted = {
             latitude: location.latitude,
             longitude: location.longitude,
@@ -51,8 +74,8 @@ const LocationSelector = ({ navigation }) => {
                 console.log(error.message);
                 setError(error.message)
             }
-        })();
-    }, []);
+        })()
+    }, [])
 
     //Reverse geocoding
     useEffect(() => {
@@ -75,7 +98,7 @@ const LocationSelector = ({ navigation }) => {
         <View style={styles.container}>
             <Text
                 style = {styles.text}
-            >My Address</Text>
+            >Mi Ubicación</Text>
             {/* Flatlist con las directions */}
             {location ? (
                 <>
@@ -83,14 +106,14 @@ const LocationSelector = ({ navigation }) => {
                         style = {styles.text}
                     >Lat: {location.latitude}, long: {location.longitude}.
                     </Text>
-                    {/* <MapPreview location={location} />
+                    <MapPreview location={location} />
                     <Text style={styles.address}>
-                        Formatted address: {address}
+                        Dirección: {address}
                     </Text>
                     <AddButton
                         onPress={onConfirmAddress}
-                        title="Confirm address"
-                    /> */}
+                        title="Confirmar"
+                    />
                 </>
             ) : (
                 <>
@@ -113,21 +136,24 @@ const styles = StyleSheet.create({
     },
     text: {
         paddingTop: 20,
-        fontFamily: 'Josefin',
-        fontSize: 18
+        paddingBottom: 20,
+        fontSize: 18,
+        color: themes.primary,
+        fontFamily: 'Poppins-Medium'
     },
     noLocationContainer: {
         width: 200,
         height: 200,
         borderWidth: 2,
-        borderColor: colors.peach,
+        borderColor: themes.primary,
         padding: 10,
         justifyContent: "center",
         alignItems: "center",
     },
     address: {
-        padding: 10,
-        fontFamily: "Ubuntu",
-        fontSize: 16,
+        padding: 20,
+        fontSize: 18,
+        color: themes.primary,
+        fontFamily: 'Poppins-Medium'
     },
 });
