@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from '../Features/User/userSlice';
+import { deleteSession } from '../SQLite';
 
 const Header = ({route, navigation }) => {
 
@@ -21,7 +22,19 @@ const Header = ({route, navigation }) => {
   if (route.name === 'Image Selector') title = "Mi foto de perfil";
 
   const dispatch = useDispatch();
-  const {email} = useSelector(state => state.userReducer.value)
+  const {email, localId} = useSelector(state => state.userReducer.value);
+
+  const onSignout = async () => {
+    try {
+      console.log("delete sessions...");          
+      const response = await deleteSession(localId)
+      console.log(response);
+      dispatch(signOut())
+    } catch (error) {
+      console.log('Error while sign out');
+      console.log(error.message);
+    }
+  }
 
   return (
     <View style={styles.containerHeader}>
@@ -42,7 +55,7 @@ const Header = ({route, navigation }) => {
                   { email ?
                     <Pressable 
                       style={styles.pressable}
-                      onPress={() => dispatch(signOut())}>
+                      onPress={onSignout}>
                       <Feather name="user-x" size={28} color={themes.primary} />
                   </Pressable> : null
                   }
