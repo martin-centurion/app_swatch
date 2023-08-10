@@ -97,7 +97,7 @@
         "brand": "Swatch",
         "category": "Hombres",
         "images": [
-            "https://static.swatch.com/images/product/SO29B109/sa200/SO29B109_sa200_er005.png"
+            "https://static.swatch.com/images/product/SUOZ356/sa200/SUOZ356_sa200_er005.png"
         ]
     },
     {
@@ -140,6 +140,160 @@
         "category": "Accesorios",
         "images": [
             "https://static.swatch.com/images/product/ASUOT700/sa130/ASUOT700_sa130_er005.png"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Purity of neon",
+        "description": "Este reloj retro de gran tamaño está inspirado en un Swatch Chrono de los 90, el WHITE HORSES CHRONO SCW100. Su esfera neón multicolor y sus coloridas coronas resaltan sobre la caja y la correa de origen biológico color blanco puro.",
+        "price": 93.295,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Mujer",
+        "images": [
+            "https://static.swatch.com/images/product/SB06W100/sa200/SB06W100_sa200_er005.png"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Coral Dreams",
+        "description": "Este reloj de color durazno pastel incluye una caja transparente y brillante de origen biológico color naranja con un cristal de origen biológico que brilla con el efecto Solar Spectrum. La correa semitransparente de color rosa mate incluye una trabilla y una hebilla naranjas.",
+        "price": 45.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Mujer",
+        "images": [
+            "https://static.swatch.com/images/product/SO28O401/sa200/SO28O401_sa200_er005.png"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Dark Spark",
+        "description": "Este elegante reloj SKIN IRONY incluye una correa de piel nobuk y una caja de PVD negro brillante. Su esfera negra pulida resalta los doce cristales negros adheridos directamente al cristal.",
+        "price": 111.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Mujer",
+        "images": [
+            "https://static.swatch.com/images/product/SYXB106/sa200/SYXB106_sa200_er005.png"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Big Bold",
+        "description": "Este modelo BIG BOLD BIOCERAMIC de tamaño oversize cuenta con una robusta correa de silicona azul mate con estampados en distintos tonos de azul. Su caja y bisel, fabricados en BIOCERAMIC, también vienen en el mismo color azul mate. Su maciza esfera azul oscuro acentúa el acabado blanco y superluminoso de sus agujas negras. El segundero inspirado en la aguja de una brújula intensifica la experiencia.",
+        "price": 90.795,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Mujer",
+        "images": [
+            "https://static.swatch.com/images/product/SB03N102/sa200/SB03N102_sa200_er005.png"
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Flowerz",
+        "description": "Este divertido reloj incluye una correa con estampados florales y una caja blanca mate de origen biológico. La esfera de este reloj también es blanca con coloridos números estampados y una flor. Las agujas de color amarillo brillante y blanco indican la hora.",
+        "price": 43.595,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Mujer",
+        "images": [
+            "https://static.swatch.com/images/product/SO28W108/sa200/SO28W108_sa200_er005.png"
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Farfallaxus",
+        "description": "El reloj para niños FARFALLAXUS es perfecto para aprender a decir la hora. Un regalo educativo con una correa estampada con mariposas de lo más elegante que les encantará.",
+        "price": 31.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Niños",
+        "images": [
+            "https://static.swatch.com/flikflak/images/product/ZFCSP119/fa000/ZFCSP119_fa000_ec002.png"
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Catch U",
+        "description": "La espléndida combinación del enigmático negro y los elementos en naranja neón convierte al CATCH U en el accesorio perfecto para estar al mando de una nave espacial. Gracias a los detalles de neón en la esfera y el bisel giratorio, aprender a decir la hora será un auténtico juego.",
+        "price": 33.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Niños",
+        "images": [
+            "https://static.swatch.com/flikflak/images/product/ZFCSP093/sa360/ZFCSP093_1.png"
+        ]
+    },
+    {
+        "id": 18,
+        "title": "Lovaxus",
+        "description": "El reloj LOVAXUS es el regalo perfecto para que los niños aprendan a decir la hora. Luce una correa estampada, una esfera metalizada y un segundero con forma de corazón. Un reloj educativo y elegante.",
+        "price": 31.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Niños",
+        "images": [
+            "https://static.swatch.com/flikflak/images/product/ZFCSP115/sa360/ZFCSP115_59.png"
+        ]
+    },
+    {
+        "id": 19,
+        "title": "Stripy Dreams",
+        "description": "¿Qué es lo que nos espera allá, al final del arco iris? Tan divertido como descubrirlo va a ser aprender a leer la hora. En este colorido reloj suizo infantil, las franjas realzan su potencial como accesorio de moda. ¡Verás cómo las horas se transforman en un sueño llueva o haga sol!",
+        "price": 25.795,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Niños",
+        "images": [
+            "https://static.swatch.com/flikflak/images/product/ZFPNP014/fa000/ZFPNP014_fa000_ec002.png"
+        ]
+    },
+    {
+        "id": 20,
+        "title": "Shaq 34 Gold",
+        "description": "Shaq 34 Gold / St. Steel PVD adj.strap",
+        "price": 20.395,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Accesorios",
+        "images": [
+            "https://static.swatch.com/images/product/ASVCK4008G/sa130/ASVCK4008G_sa130_er005.png"
+        ]
+    },
+    {
+        "id": 21,
+        "title": "Shaq 34 Gold",
+        "description": "Shaq 34 Gold / St. Steel PVD adj.strap",
+        "price": 20.395,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Accesorios",
+        "images": [
+            "https://static.swatch.com/images/product/AGS124/sa130/AGS124_sa130_er005.png"
         ]
     }
 ]

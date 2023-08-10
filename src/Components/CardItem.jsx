@@ -1,10 +1,14 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Feather } from '@expo/vector-icons';
 import { themes } from "../Global/Themes";
+import { useDispatch } from "react-redux";
+import { removeCartItem } from "../Features/Cart/cartSlice";
 
 const CartItem = ({ cartItem }) => {
-    console.log(cartItem);
+
+    const dispatch = useDispatch();
+
     return (
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
@@ -19,7 +23,9 @@ const CartItem = ({ cartItem }) => {
                 />
             </View>
             <View style={styles.iconsCart}>
-                <Feather name="x-circle" size={20} color={themes.terciary} />
+                <Pressable onPress={() => dispatch(removeCartItem(cartItem.id))}>
+                    <Feather name="x-circle" size={20} color={themes.terciary} />
+                </Pressable>
             </View>
         </View>
     );

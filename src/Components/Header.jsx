@@ -20,6 +20,8 @@ const Header = ({route, navigation }) => {
   if (route.name === 'OrderScreen') title = "Ordenes de Compra";
   if (route.name === 'My Profile') title = "Mi perfil";
   if (route.name === 'Image Selector') title = "Mi foto de perfil";
+  if (route.name === 'Location Selector') title = "Mi foto de perfil";
+  if (route.name === 'List Address') title = "Mi dirección";
 
   const dispatch = useDispatch();
   const {email, localId} = useSelector(state => state.userReducer.value);

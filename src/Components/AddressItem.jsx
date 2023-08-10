@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { Entypo } from "@expo/vector-icons";
+import { FontAwesome5 } from '@expo/vector-icons';
 import React from "react";
 import { themes } from "../Global/Themes";
 
@@ -11,17 +11,23 @@ const AddressItem = ({ location, navigation }) => {
     }
 
     return (
-        <View style={styles.card} onPress={() => {}}>
-            <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                    {location.address}
-                </Text>
-            </View>
-            <Pressable onPress={onChangeLocation}>
-                <Entypo name="location" size={30} color="black">
-                    <Text style={styles.text2}>Cambiar</Text>
-                </Entypo>
-            </Pressable>
+        <View style={styles.containerAdress}>
+                <Text style={styles.titleAdress}>Mi dirección</Text>
+                <Text style={styles.subtitleAdress}>Puede editar su dirección clickeando sobre el siguiente botón.</Text>
+                <View style={styles.card} onPress={() => {}}>
+                    
+                    <View style={styles.textContainer}>
+                        <Text style={styles.text}>
+                            {location.address}
+                        </Text>
+                    </View>
+                    <Pressable 
+                        style={styles.buttonAddress}
+                        onPress={onChangeLocation}
+                    >
+                        <FontAwesome5 name="edit" size={36} color={themes.primary} />
+                    </Pressable>
+                </View>
         </View>
     );
 };
@@ -29,13 +35,28 @@ const AddressItem = ({ location, navigation }) => {
 export default AddressItem;
 
 const styles = StyleSheet.create({
+    containerAdress: {
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    titleAdress:{
+        fontFamily: 'Poppins-Bold',
+        fontSize: 28,
+        padding: 20
+    },
+    subtitleAdress:{
+        fontFamily: 'Poppins-Medium',
+        fontSize: 20,
+        padding: 20
+    },
     card: {
-        height: 100,
+        height: 200,
+        width: 350,
         backgroundColor: themes.hover,
-        padding: 10,
+        padding: 20,
         margin: 10,
-        borderWidth: 2,
-        borderRadius: 10,
+        borderRadius: 15,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
@@ -47,13 +68,11 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
     },
     text: {
-        fontFamily: 'Poppins-Bold',
-        fontSize: 17,
+        fontFamily: 'Poppins-Medium',
+        fontSize: 16,
         color: "black",
     },
-    text2: {
-        fontFamily: 'Poppins-Bold',
-        fontSize: 19,
-        color: themes.primary,
+    buttonAddress: {
+        paddingRight: 20,
     },
 });

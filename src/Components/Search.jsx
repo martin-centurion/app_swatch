@@ -5,6 +5,14 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { themes } from '../Global/Themes';
 
+
+/**
+ * Search component for ItemListContainer
+ * @param {*} param0  Callback when search
+ * @returns For showing error
+ */
+
+
 const Search = ({
     onSearch,
     error = "",

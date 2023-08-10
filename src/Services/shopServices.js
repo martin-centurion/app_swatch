@@ -65,7 +65,9 @@ export const shopApi = createApi({
 })
 
 export const {
-    useGetCategoriesQuery, 
+    useGetCategoriesQuery,
+    useGetOrdersByIdQuery,
+    useGetOrdersQuery,
     useGetProductsQuery, 
     useGetProductsByCategoryQuery,
     useGetProductByIdQuery,

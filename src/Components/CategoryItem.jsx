@@ -16,8 +16,8 @@ const CategoryItem = ({
   const dispatch = useDispatch()
 
   const onSelectCategory = () => {
-      dispatch(setCategorySelected(item))
-      navigation.navigate('ItemListCategory', {category: item});
+      dispatch(setCategorySelected(item.category));
+      navigation.navigate('ItemListCategory', {category: item.category});
   }
 
   return (
@@ -30,12 +30,12 @@ const CategoryItem = ({
 
           <View style={styles.categoryContainer}>
               <View>
-                <Text style={styles.categoryText}>{item}</Text>
+                <Text style={styles.categoryText}>{item.category}</Text>
               </View>
               <Image 
                 resizeMode='cover'
                 style = {styles.image}
-                source={{uri: "https://static.swatch.com/images/product/SS07S129G/sa200/SS07S129G_sa200_er005.png"}}
+                source={{uri: item.images}}
               />
           </View>
 

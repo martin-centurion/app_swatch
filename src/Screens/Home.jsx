@@ -5,6 +5,7 @@ import CategoryItem from '../Components/CategoryItem';
 import Banner from '../Components/Banner';
 import Counter from '../Components/Counter';
 import { useGetCategoriesQuery } from '../Services/shopServices';
+import ProductItem from '../Components/ProductItem';
 
 const Home = ({
     navigation

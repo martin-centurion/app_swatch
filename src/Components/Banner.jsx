@@ -9,7 +9,7 @@ const Banner = () => {
       <Pressable onPress={() => {}}>
         <View style={styles.containerBannerImage}>
           <Text style={styles.textBanner}>
-              Nuevo Lanzamiento!
+            PURITY OF NEON!
           </Text>
           <Image 
               resizeMode='cover'

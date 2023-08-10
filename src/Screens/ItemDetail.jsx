@@ -1,4 +1,4 @@
-import { Button, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from "react";
 import allProducts from "../Data/products.json";
 import { themes } from "../Global/Themes";

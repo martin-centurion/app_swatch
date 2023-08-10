@@ -8,7 +8,7 @@ const ProductItem = ({
   navigation
 }) => {
 console.log(item);
-  const onSelect = (id) => {
+  const onSelect = () => {
     
      navigation.navigate('ItemDetail', {productId: item.id, title: item.title})
   }
@@ -23,7 +23,7 @@ console.log(item);
             
             <ProductItemCard style={styles.container}>
                 <View style={styles.containerProduct}>
-                    <View style={styles.containerTextProduct}>
+                    <View>
                         <Text style={styles.textTitle}>{item.title}</Text>
                         <Text style={styles.textPrice}>${item.price}</Text>
                     </View>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'Poppins-Light',
     marginBottom: 3,
-    width: '90%',
+    width: '100%',
     color: themes.secondary
   },
   textPrice: {
@@ -64,13 +64,14 @@ const styles = StyleSheet.create({
     color: themes.secondary
   },
   image: {
-    height: 120,
+    height: 100,
     width: 100,
-    borderRadius: 8
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   additionalStylesCard: {
     flexDirection: 'row',
-    height: 120,
+    height: 100,
     justifyContent: 'space-between'
   }
 })

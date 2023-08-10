@@ -1,9 +1,26 @@
 [
-    "Todos los relojes",
-    "Relojes de mujer",
-    "Relojes de hombres",
-    "Relojes de niños",
-    "Nuevos lanzamientos",
-    "Los más vendidos",
-    "Accesorios"
+    {
+        "id": 1,
+        "category": "Mujer",
+        "images":"https://static.swatch.com/images/product/GM416/sa200/GM416_sa200_er005.png"
+
+    },
+    {
+        "id": 2,
+        "category": "Hombres",
+        "images":"https://static.swatch.com/images/product/SS07S129G/sa200/SS07S129G_sa200_er005.png"
+
+    },
+    {
+        "id": 3,
+        "category": "Niños",
+        "images":"https://static.swatch.com/flikflak/images/product/ZFBNP206/fa200/ZFBNP206_fa200_er007.png"
+
+    },
+    {
+        "id": 4,
+        "category": "Accesorios",
+        "images":"https://static.swatch.com/images/product/ASUOT700/sa130/ASUOT700_sa130_er005.png"
+
+    }
 ]
