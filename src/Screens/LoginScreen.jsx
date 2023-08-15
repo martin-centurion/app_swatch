@@ -74,7 +74,7 @@ const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.main}>
         <View style={styles.container}>
-            <Text style={styles.title}>Login to start</Text>
+            <Text style={styles.title}>Ingrese su cuenta</Text>
             <InputForm 
                 label={"email"}
                 onChange={(email)=> setEmail(email)}
@@ -88,7 +88,7 @@ const LoginScreen = ({navigation}) => {
             />
             <SubmitButton 
                 onPress={onSubmit}
-                title = "Send"
+                title = "Confirmar"
             />
             <Text style={styles.sub}>¿No tienes una cuenta?</Text>
             <Pressable onPress={()=> navigation.navigate('Signup')}>

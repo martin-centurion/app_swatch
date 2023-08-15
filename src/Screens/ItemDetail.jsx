@@ -4,8 +4,9 @@ import allProducts from "../Data/products.json";
 import { themes } from "../Global/Themes";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../Features/Cart/cartSlice";
+import { Feather } from '@expo/vector-icons';
 
-const ItemDetail = ({ navigation, route }) => {
+const ItemDetail = ({ route }) => {
 
     const {productId: idSelected} = route.params;
 
@@ -40,6 +41,7 @@ const ItemDetail = ({ navigation, route }) => {
     return (
       <View style = {styles.containerDetail}>
             {product ? (
+            <>
               <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape} >
                     
                   
@@ -50,22 +52,28 @@ const ItemDetail = ({ navigation, route }) => {
                     />
 
                     <View style = {styles.textContainer}>
+                      <Text style={styles.textEnvio}>Envío Gratis</Text>
                       <Text style = {styles.productTitle}>{product.title}</Text>
                       <Text style = {styles.productText} >{product.description}</Text>
-                      <Text style= {styles.productPrice}>${product.price}</Text>
                     </View>
                 </View>
-            ) : null}
+            
             
 
-                      <Pressable 
+                <Pressable 
                           style={styles.buttonAddProductContainer}
                           onPress={onAddCart}
-                      >
-                          <Text style={styles.buttonAddProduct}>
-                              Agregar Al Carrito
-                          </Text>
-                      </Pressable>
+              >
+                    <View style={styles.buttonAddProduct}>
+                        <Text style={styles.textButton}>
+                          Lo quiero!
+                        </Text>
+                        <Feather name="check" size={24} color={themes.primary} />
+                     </View>
+                     <Text style= {styles.productPrice}>$92.955</Text>
+              </Pressable>
+              </>
+              ) : null}
         
       </View>
     );
@@ -87,7 +95,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 0
+    borderRadius: 20,
+    margin: 30,
+    padding: 15,
+    backgroundColor: themes.primary
   },
   mainContainerLandscape: {
     flexDirection: 'row',
@@ -103,37 +114,60 @@ const styles = StyleSheet.create({
   textContainer: {
     paddingHorizontal: 30
   },
+  textEnvio: {
+    width: 100,
+    textAlign: 'center',
+    fontFamily: 'Poppins-Medium',
+    fontSize: 12,
+    padding: 5,
+    borderWidth: 1,
+    borderRadius: 15,
+    borderColor: themes.secondary,
+    color: themes.secondary,
+    position: 'absolute',
+    top: -310,
+    left: 10
+  },
   productTitle: {
     fontSize: 30,
     fontFamily: 'Poppins-Bold',
-    color: themes.primary,
+    color: themes.secondary,
     marginBottom: 15
   },
   productText: {
     fontSize: 12,
     fontFamily: 'Poppins-Medium',
-    color: themes.text,
+    color: themes.secondary,
     letterSpacing: 1,
     marginBottom: 15
   },
+  buttonAddProductContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 20
+  },
   productPrice: {
-    fontSize: 30,
+    width: 150,
+    fontSize: 25,
+    marginLeft: 20,
     fontFamily: 'Poppins-Bold',
     color: themes.terciary
   },
-  buttonAddProductContainer: {
-    margin: 0,
-    marginTop: 10,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
   buttonAddProduct: {
-    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: 180,
     padding: 20,
+    borderRadius: 10,
     textAlign: 'center',
-    backgroundColor: themes.terciary,
-    color: themes.secondary,
-    fontSize: 18,
+    backgroundColor: themes.secondary,
+    borderWidth: 2,
+    color: themes.primary,
+  },
+  textButton: {
+    fontSize: 16,
     fontFamily: 'Poppins-Bold',
+    marginRight: 10
   }
 })

@@ -2,7 +2,6 @@ import { Pressable, StyleSheet, Text, TextInput, View, useWindowDimensions } fro
 import React, { useState } from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 import { themes } from '../Global/Themes';
 
 
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
         width: 250,
         padding: 8,
         fontSize: 18,
-        backgroundColor: themes.terciary,
+        backgroundColor: themes.hover,
         borderRadius: 10,
         color: themes.secondary
     }

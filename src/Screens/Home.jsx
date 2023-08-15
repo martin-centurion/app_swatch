@@ -3,9 +3,7 @@ import React from 'react';
 import { themes } from '../Global/Themes';
 import CategoryItem from '../Components/CategoryItem';
 import Banner from '../Components/Banner';
-import Counter from '../Components/Counter';
 import { useGetCategoriesQuery } from '../Services/shopServices';
-import ProductItem from '../Components/ProductItem';
 
 const Home = ({
     navigation
@@ -21,7 +19,9 @@ const Home = ({
     <View style={styles.containerHome}>
         <View style={styles.containerBody}>
             {/* <Counter /> */}
-            <Banner />
+            <Banner 
+                navigation={navigation}
+            />
             <FlatList
                 data={categories}
                 keyExtractor={category => category}

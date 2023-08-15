@@ -72,7 +72,7 @@ const SignupScreen = ({ navigation }) => {
     return (
         <View style={styles.main}>
             <View style={styles.container}>
-                <Text style={styles.title}>Sign Up</Text>
+                <Text style={styles.title}>Registro</Text>
                 <InputForm 
                     label={"Email"} 
                     onChange={setEmail} 
@@ -84,15 +84,15 @@ const SignupScreen = ({ navigation }) => {
                     isSecure={true}
                 />
                 <InputForm
-                    label={"Confirm Password"}
+                    label={"Confirmar Password"}
                     onChange={setconfirmPassword}
                     error={errorConfirmPassword}
                     isSecure={true}
                 />
-                <SubmitButton onPress={onSubmit} title="Send" />
+                <SubmitButton onPress={onSubmit} title="Confirmar" />
                 <Text style={styles.sub}>¿Ya tienes una cuenta?</Text>
                 <Pressable onPress={() => navigation.navigate("Login")}>
-                    <Text style={styles.subLink}>Login</Text>
+                    <Text style={styles.subLink}>Clickea aquí para ingresar</Text>
                 </Pressable>
             </View>
         </View>

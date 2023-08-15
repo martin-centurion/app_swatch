@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
       margin: 10,
       fontSize: 14,
       fontFamily: 'Poppins-Bold',
-      color: themes.secondary
+      color: themes.primary
     },
     image: {
       width: 80,

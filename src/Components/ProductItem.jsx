@@ -7,7 +7,6 @@ const ProductItem = ({
   item,
   navigation
 }) => {
-console.log(item);
   const onSelect = () => {
     
      navigation.navigate('ItemDetail', {productId: item.id, title: item.title})

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         height: 120,
         padding: 20,
         borderRadius: 10,
-        backgroundColor: themes.terciary,
+        backgroundColor: themes.hover,
         justifyContent: 'space-around',
         alignItems: 'center',
         marginVertical: 20
