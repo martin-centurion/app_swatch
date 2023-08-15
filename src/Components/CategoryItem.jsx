@@ -16,8 +16,8 @@ const CategoryItem = ({
   const dispatch = useDispatch()
 
   const onSelectCategory = () => {
-      dispatch(setCategorySelected(item.category));
-      navigation.navigate('ItemListCategory', {category: item.category});
+      dispatch(setCategorySelected(item));
+      navigation.navigate('ItemListCategory', {category: item});
   }
 
   return (
@@ -30,13 +30,8 @@ const CategoryItem = ({
 
           <View style={styles.categoryContainer}>
               <View>
-                <Text style={styles.categoryText}>{item.category}</Text>
+                <Text style={styles.categoryText}>{item}</Text>
               </View>
-              <Image 
-                resizeMode='cover'
-                style = {styles.image}
-                source={{uri: item.images}}
-              />
           </View>
 
         </Card>
