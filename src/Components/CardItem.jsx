@@ -11,21 +11,26 @@ const CartItem = ({ cartItem }) => {
 
     return (
         <View style={styles.card} onPress={() => {}}>
+            <View style={styles.containerImages}>
+                <View style={styles.imagesCard}>
+                    <Image
+                        source={{ uri: cartItem.images[0] }}
+                        style={styles.image}
+                        resizeMode="contain"
+                    />
+                </View>
+                <View style={styles.iconsCart}>
+                    <Pressable onPress={() => dispatch(removeCartItem(cartItem.id))}>
+                        <Feather name="x-circle" size={20} color={themes.primary} />
+                    </Pressable>
+                </View>
+                <View style={styles.containerQuantity}>
+                    <Text style={styles.textQuantity}>x {cartItem.quantity}</Text>
+                </View>
+            </View>
             <View style={styles.textContainer}>
-                <Text style={styles.text}>{cartItem.title} {cartItem.quantity} Un.</Text>
+                <Text style={styles.text}>{cartItem.title}</Text>
                 <Text style={styles.text2}>${cartItem.price}</Text>
-            </View>
-            <View>
-                <Image
-                    source={{ uri: cartItem.images[0] }}
-                    style={styles.image}
-                    resizeMode="contain"
-                />
-            </View>
-            <View style={styles.iconsCart}>
-                <Pressable onPress={() => dispatch(removeCartItem(cartItem.id))}>
-                    <Feather name="x-circle" size={20} color={themes.terciary} />
-                </Pressable>
             </View>
         </View>
     );
@@ -35,37 +40,57 @@ export default CartItem;
 
 const styles = StyleSheet.create({
     card: {
-        height: 100,
-        backgroundColor: themes.hover,
         padding: 20,
         margin: 10,
         borderRadius: 10,
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "center"
+    },
+    containerImages: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: themes.green,
+        borderRadius: 15,
+        padding: 10
     },
     textContainer: {
-        width: "70%",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
+        flexDirection: "column"
     },
     text: {
-        fontFamily: "Poppins-Bold",
-        fontSize: 14,
+        fontFamily: "Poppins-Medium",
+        fontSize: 16,
         color: themes.primary,
     },
     text2: {
         fontFamily: "Poppins-Bold",
-        fontSize: 30,
+        fontSize: 26,
         marginTop: 5,
-        color: themes.terciary
+        color: themes.primary
+    },
+    containerQuantity: {
+        backgroundColor: themes.green,
+        position: 'absolute',
+        borderRadius: 20,
+        left: 150,
+        top: 70,
+        padding: 10,
+        
+    },
+    textQuantity: {
+        fontFamily: "Poppins-Bold",
+        fontSize: 14,
+        color: themes.primary
     },
     image: {
-        width: 80,
-        height: 80
+        width: 150,
+        height: 150
     },
     iconsCart: {
-        padding: 5
+        position: 'absolute',
+        left: 5,
+        top: 5,
+        padding: 10,
+        borderRadius: 20
     }
 });

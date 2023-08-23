@@ -130,6 +130,6 @@ const styles = StyleSheet.create({
     subLink: {
         fontSize: 14,
         fontFamily: "Poppins-Bold",
-        color: themes.terciary,
+        color: themes.primary
     },
 });

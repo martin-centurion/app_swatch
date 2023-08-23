@@ -14,13 +14,12 @@ export default Card;
 
 const styles = StyleSheet.create({
     cardContainer: {
-        width: 200,
-        height: 120,
-        padding: 20,
+        width: 170,
+        height: 40,
         borderRadius: 10,
-        backgroundColor: themes.hover,
+        backgroundColor: themes.green,
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginVertical: 20
+        marginVertical: 35
     }
 })

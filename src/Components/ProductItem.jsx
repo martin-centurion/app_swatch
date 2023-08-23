@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { themes } from '../Global/Themes';
 import ProductItemCard from './ProductItemCard';
@@ -7,20 +7,18 @@ const ProductItem = ({
   item,
   navigation
 }) => {
-  const onSelect = () => {
-    
+
+  const onSelect = () => {   
      navigation.navigate('ItemDetail', {productId: item.id, title: item.title})
   }
 
-  const {width} = useWindowDimensions();
 
   return (
-    <View style = {{width: width, alignItems: 'center'}}>
+    <View>
       <Pressable 
-            onPress={() => onSelect(item.id)}
-            >
-            
-            <ProductItemCard style={styles.container}>
+        onPress={() => onSelect(item.id)}
+      >            
+            <ProductItemCard>
                 <View style={styles.containerProduct}>
                     <View>
                         <Text style={styles.textTitle}>{item.title}</Text>
@@ -41,30 +39,27 @@ const ProductItem = ({
 export default ProductItem;
 
 const styles = StyleSheet.create({
-  container: {
-      
-  },
   containerProduct: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: "center",
-    width: 350
+    alignItems: "center"
   },
   textTitle: {
     fontSize: 18,
     fontFamily: 'Poppins-Light',
     marginBottom: 3,
-    width: '100%',
-    color: themes.secondary
+    marginHorizontal: 10,
+    width: 80,
+    color: themes.primary
   },
   textPrice: {
-    fontSize: 16,
+    fontSize: 20,
     fontFamily: 'Poppins-Bold',
-    color: themes.secondary
+    color: themes.primary,
+    marginHorizontal: 10
   },
   image: {
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 150,
     alignItems: 'center',
     justifyContent: 'center'
   },

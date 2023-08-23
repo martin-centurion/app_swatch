@@ -38,7 +38,7 @@ const Cart = () => {
                     onPress={onConfirm}
                 >
                     <Text style={styles.textButton}>
-                        Confimar Compra
+                        Comprar
                     </Text>
                 </Pressable>
             </View>
@@ -70,16 +70,16 @@ const styles = StyleSheet.create({
         padding: 20
     },
     totalButton: {
-        backgroundColor: themes.terciary,
+        backgroundColor: themes.primary,
         borderRadius: 10,
-        width: 200,
+        width: 160,
         height: 60,
         alignItems: 'center',
         justifyContent: 'center'
     },
     textButton: {
         color: themes.secondary,
-        fontSize: 16,
+        fontSize: 14,
         fontFamily: 'Poppins-Bold'
     },
     titleButtonTotal: {
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
         fontSize: 14
     },
     textButtonTotal: {
-        color: themes.terciary,
+        color: themes.primary,
         fontFamily: 'Poppins-Bold',
         fontSize: 26
     }

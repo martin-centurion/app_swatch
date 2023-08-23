@@ -4,6 +4,7 @@ import Card from './Card';
 import { themes } from '../Global/Themes';
 import { useDispatch } from 'react-redux';
 import { setCategorySelected } from '../Features/Shop/shopSlice';
+import { Feather } from '@expo/vector-icons';
 
 const CategoryItem = ({
     item,
@@ -23,14 +24,15 @@ const CategoryItem = ({
   return (
     
     <View style={styles.container}>
-      <Pressable
-          onPress={onSelectCategory}
-      >
+        <Pressable
+            onPress={onSelectCategory}
+        >
         <Card>
 
           <View style={styles.categoryContainer}>
-              <View>
                 <Text style={styles.categoryText}>{item}</Text>
+              <View>
+                <Feather name="plus" size={20} color={themes.primary} />
               </View>
           </View>
 
@@ -40,27 +42,22 @@ const CategoryItem = ({
   )
 }
 
-export default CategoryItem
+export default CategoryItem;
 
 const styles = StyleSheet.create({
     container: {
       marginHorizontal: 15
     },
     categoryContainer: {
-      width: "100%",
       flexDirection: 'row',
-      justifyContent: "space-around",
+      justifyContent: "space-between",
       alignItems: "center"
     },
     categoryText: {
       width: 80,
       margin: 10,
       fontSize: 14,
-      fontFamily: 'Poppins-Bold',
+      fontFamily: 'Poppins-Medium',
       color: themes.primary
-    },
-    image: {
-      width: 80,
-      height: 80
     }
 })

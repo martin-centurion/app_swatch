@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { Image, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from "react";
 import allProducts from "../Data/products.json";
 import { themes } from "../Global/Themes";
@@ -39,7 +39,7 @@ const ItemDetail = ({ route }) => {
     }
 
     return (
-      <View style = {styles.containerDetail}>
+      <ScrollView style = {styles.containerDetail}>
             {product ? (
             <>
               <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape} >
@@ -70,12 +70,12 @@ const ItemDetail = ({ route }) => {
                         </Text>
                         <Feather name="check" size={24} color={themes.primary} />
                      </View>
-                     <Text style= {styles.productPrice}>$92.955</Text>
+                     <Text style= {styles.productPrice}>${product.price}</Text>
               </Pressable>
               </>
               ) : null}
         
-      </View>
+      </ScrollView>
     );
 };
 

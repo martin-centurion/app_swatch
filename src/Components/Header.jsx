@@ -16,13 +16,13 @@ const Header = ({route, navigation }) => {
   if (route.name === 'Login') title = "Ingresa";
   if (route.name === 'ItemListCategory') title = route.params.category;
   if (route.name === 'ItemDetail') title = route.params.title;
-  if (route.name === 'CartScreen') title = "Tu Carrito";
+  if (route.name === 'CartScreen') title = "Mí Carrito";
   if (route.name === 'OrderScreen') title = "Ordenes de Compra";
   if (route.name === 'My Profile') title = "Mi perfil";
   if (route.name === 'Image Selector') title = "Mi foto de perfil";
   if (route.name === 'Location Selector') title = "Mi foto de perfil";
   if (route.name === 'List Address') title = "Mi dirección";
-  if (route.name === 'BannerItem') title = "Purity of Neon!";
+  if (route.name === 'Welcome') title = "Bienvenidos a Swatch ©";
 
   const dispatch = useDispatch();
   const {email, localId} = useSelector(state => state.userReducer.value);
@@ -45,7 +45,7 @@ const Header = ({route, navigation }) => {
         <View style={styles.iconsHeaderContainer}>
             <View style={styles.iconHeader}>
                 {
-                  route.name !== 'Signup' && route.name !== 'Login' && route.name !== 'Home' ?
+                  route.name !== 'Signup' && route.name !== 'Login' && route.name !== 'Home' && route.name !== 'Welcome' ?
                   <Pressable 
                       style={styles.pressable}
                       onPress={() => navigation.goBack()}>

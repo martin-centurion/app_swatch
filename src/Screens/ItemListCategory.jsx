@@ -56,7 +56,6 @@ const ItemListCategory = ({
               item={item}
               navigation={navigation}
               />}
-            
               showsVerticalScrollIndicator={false}
           />
     </View>

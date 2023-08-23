@@ -8,10 +8,11 @@ const Banner = ({
 }) => {
 
 
+
   return (
     <View style={styles.containerBanner}>
       <Pressable
-           onPress={() => navigation.navigate('BannerItem')}
+           onPress={() => navigation.navigate('ItemDetail', {productId: 11, title: 'Purity of Neon'})}
           >
           <View style={styles.containerBannerImage}>
             <Text style={styles.textBanner}>

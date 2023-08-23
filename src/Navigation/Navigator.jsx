@@ -61,7 +61,7 @@ const Navigator = () => {
                             console.log(focused);
                             return (
                                 <View>
-                                   <SimpleLineIcons name="home" size={24} color={focused ? themes.terciary : themes.primary} />
+                                   <SimpleLineIcons name="home" size={24} color={focused ? themes.terciary : themes.hover} />
                                 </View>
                             )
                         }
@@ -74,7 +74,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="bag" size={24} color={focused ? themes.terciary : themes.primary} />  
+                                    <SimpleLineIcons name="bag" size={24} color={focused ? themes.terciary : themes.hover} />  
                                 </View>
                             )
                         }
@@ -87,7 +87,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <SimpleLineIcons name="list" size={24} color={focused ? themes.terciary : themes.primary} />   
+                                    <SimpleLineIcons name="list" size={24} color={focused ? themes.terciary : themes.hover} />   
                                 </View>
                             )
                         }
@@ -101,7 +101,7 @@ const Navigator = () => {
                             tabBarIcon: ({ focused }) => {
                                 return (
                                     <View style={styles.item}>
-                                        <Feather name="user" size={28} color={focused ? themes.terciary : themes.primary} />
+                                        <Feather name="user" size={28} color={focused ? themes.terciary : themes.hover} />
                                     </View>
                                 );
                             },

@@ -1,6 +1,6 @@
-import { StyleSheet, View } from 'react-native'
-import React from 'react'
-import { themes } from '../Global/Themes'
+import { StyleSheet, View } from 'react-native';
+import React from 'react';
+import { themes } from '../Global/Themes';
 
 const ProductItemCard = ( {children} ) => {
   return (
@@ -14,13 +14,13 @@ export default ProductItemCard;
 
 const styles = StyleSheet.create({
     cardContainer: {
-        width: 350,
-        height: 120,
-        padding: 20,
-        borderRadius: 10,
-        backgroundColor: themes.terciary,
-        justifyContent: 'space-around',
+        flexDirection: 'row',
+        backgroundColor: themes.green,
+        justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 10
+        borderRadius: 15,
+        width: 305,
+        height: 200,
+        margin: 15
     }
 })

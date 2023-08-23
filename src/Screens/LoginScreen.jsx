@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import InputForm from "../Components/InputForm";
 import SubmitButton from "../Components/SubmitButton";
@@ -73,6 +73,13 @@ const LoginScreen = ({navigation}) => {
 
   return (
     <View style={styles.main}>
+        <View>
+                    <Image 
+                        source={{ uri: 'https://static.swatch.com/images/product/SUOZ356/li4/SUOZ356_li4_ec001.jpg'}}
+                        style={styles.imageBackground}
+                        resizeMode="contain"
+                    />
+                </View>
         <View style={styles.container}>
             <Text style={styles.title}>Ingrese su cuenta</Text>
             <InputForm 
@@ -129,6 +136,15 @@ const styles = StyleSheet.create({
     },
     subLink: {
         fontSize: 14,
-        color: themes.terciary,
+        color: themes.primary,
+        fontFamily: 'Poppins-Bold'
+    },
+    imageBackground: {
+        position: 'absolute',
+        top: -290,
+        left: -340,
+        width: 900,
+        height: 900,
+        zIndex: -1
     }
 })

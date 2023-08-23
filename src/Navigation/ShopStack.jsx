@@ -3,9 +3,7 @@ import Header from '../Components/Header'
 import ItemListCategory from '../Screens/ItemListCategory'
 import ItemDetail from '../Screens/ItemDetail'
 import Home from '../Screens/Home'
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import BannerItem from "../Components/BannerItem";
 
 
 const Stack = createNativeStackNavigator()
@@ -23,10 +21,6 @@ const ShopStack = () => {
             <Stack.Screen 
                 name="Home" 
                 component={Home} 
-            />
-            <Stack.Screen 
-                name="BannerItem" 
-                component={BannerItem} 
             />
             <Stack.Screen
                 name="ItemListCategory"
