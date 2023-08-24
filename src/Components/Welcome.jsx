@@ -14,6 +14,7 @@ const Welcome = ({
                         source={{ uri: 'https://static.swatch.com/images/product/SB03G100/li1/SB03G100_li1_ec001.jpg'}}
                         style={styles.imageBackground}
                         resizeMode="contain"
+                        blurRadius={5}
                     />
                 </View>
                 
@@ -27,18 +28,26 @@ const Welcome = ({
                         </Text>
                     </View>
                     <Pressable
-                            onPress={() => navigation.navigate('Signup')}
+                            onPress={() => navigation.navigate('Login')}
                             style={styles.buttonContainer}
                     >
                             <View style={styles.button}>
                                 <View>
-                                    <Text style={styles.textButton}>Ingresar</Text>
+                                    <Text style={styles.textButton}>Login</Text>
                                 </View>
                                 <View>
                                     <Feather name="arrow-right" size={24} color={themes.primary}/>
                                 </View>
                             </View>
                     </Pressable>
+                    <View style={styles.footerContainer}>
+                            <Text style={styles.textFooter}>¿No tenes una cuenta? {' >'} </Text>
+                            <Pressable
+                                 onPress={() => navigation.navigate('Signup')}
+                            >
+                                <Text style={styles.textRegister}>Registrarse</Text>
+                            </Pressable>
+                    </View>
                 </View>
             </View>
   )
@@ -99,5 +108,20 @@ const styles = StyleSheet.create({
         width: 900,
         height: 900,
         zIndex: -1
+    },
+    footerContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly'
+    },
+    textFooter: {
+        fontSize: 14,
+        textAlign: 'center',
+        fontFamily: 'Poppins-Medium',
+        color: themes.white,
+        marginBottom: 20
+    },
+    textRegister: {
+        color: themes.green,
+        fontFamily: 'Poppins-Bold'
     }
 })

@@ -74,12 +74,12 @@ const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.main}>
         <View>
-                    <Image 
-                        source={{ uri: 'https://static.swatch.com/images/product/SUOZ356/li4/SUOZ356_li4_ec001.jpg'}}
-                        style={styles.imageBackground}
-                        resizeMode="contain"
-                    />
-                </View>
+            <Image 
+                source={{ uri: 'https://static.swatch.com/images/product/SYXG113/sa000/SYXG113_sa000_er003.png'}}
+                style={styles.imageBackground}
+                resizeMode="contain"
+            />
+        </View>
         <View style={styles.container}>
             <Text style={styles.title}>Ingrese su cuenta</Text>
             <InputForm 
@@ -120,10 +120,10 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: themes.secondary,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
         gap: 15,
         paddingVertical: 20,
-        borderRadius: 10,
+        borderRadius: 10
     },
     title: {
         fontSize: 22,
@@ -141,8 +141,9 @@ const styles = StyleSheet.create({
     },
     imageBackground: {
         position: 'absolute',
-        top: -290,
-        left: -340,
+        backgroundColor: themes.green,
+        top: -280,
+        left: -390,
         width: 900,
         height: 900,
         zIndex: -1

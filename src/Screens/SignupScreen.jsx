@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import InputForm from "../Components/InputForm";
 import SubmitButton from "../Components/SubmitButton";
@@ -71,6 +71,13 @@ const SignupScreen = ({ navigation }) => {
 
     return (
         <View style={styles.main}>
+            <View>
+                <Image 
+                    source={{ uri: 'https://static.swatch.com/images/product/SS08Z105/sa000/SS08Z105_sa000_er003.png'}}
+                    style={styles.imageBackground}
+                    resizeMode="contain"
+                />
+            </View>
             <View style={styles.container}>
                 <Text style={styles.title}>Registro</Text>
                 <InputForm 
@@ -114,6 +121,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: themes.white,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
         gap: 15,
         paddingVertical: 20,
         borderRadius: 10,
@@ -132,4 +140,13 @@ const styles = StyleSheet.create({
         fontFamily: "Poppins-Bold",
         color: themes.primary
     },
+    imageBackground: {
+        position: 'absolute',
+        backgroundColor: 'rgb(243, 190, 220)',
+        top: -280,
+        left: -390,
+        width: 900,
+        height: 900,
+        zIndex: -1
+    }
 });
