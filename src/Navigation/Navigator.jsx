@@ -13,11 +13,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import MyProfileStack from './MyProfileStack'
 import { getSession } from "../SQLite";
 import { setUser } from "../Features/User/userSlice";
+import { setUserCart } from '../Features/Cart/cartSlice';
 
 const Tab = createBottomTabNavigator()
 
 const Navigator = () => {
-
+        
         const {email} = useSelector(state => state.userReducer.value);
         const dispatch = useDispatch();
 
@@ -25,14 +26,20 @@ const Navigator = () => {
             useEffect(()=> {
                 (async ()=> {
                     try {
-                        console.log('Getting session...');
                         const session = await getSession()
-                        console.log('Sesion: ');
-                        console.log(session);
                         if (session?.rows.length) {
                             const user = session.rows._array[0]
-                            dispatch(setUser(user))
-                        }
+                                dispatch(setUser({
+                                    ...user,
+                                    profileImage: "",
+                                    location: {
+                                        latitude: "",
+                                        longitude: "",
+                                        address: ""
+                                    },
+                            }))
+                            dispatch(setUserCart(user.email))
+                            }
                     } catch (error) {
                         console.log('Error getting session');
                         console.log(error.message);

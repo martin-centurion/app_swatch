@@ -5,21 +5,21 @@ import { themes } from "../Global/Themes";
 
 
 const OrderItem = ({ order }) => {
-    const total = order.items.reduce(
-        (acc, currentItem) => (acc += currentItem.price * currentItem.quantity),
-        0
-    );
 
     return (
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>
-                    {new Date(order.createdAt).toLocaleString()}
+                    {new Date(order.updatedAt).toLocaleString()}
                 </Text>
-                <Text style={styles.text2}>${total}</Text>
+                <Text style={styles.text2}>${order.total}</Text>
+                <View>
+                    <Text>{order.id}</Text>
+                    <Text>{order.user}</Text>
+                </View>
             </View>
             <View style={styles.iconsOrder}>
-                <SimpleLineIcons name="eye" size={20} color={themes.secondary} />
+                <SimpleLineIcons name="eye" size={20} color={themes.primary} />
             </View>
         </View>
     );
@@ -30,7 +30,7 @@ export default OrderItem;
 const styles = StyleSheet.create({
     card: {
         height: 100,
-        backgroundColor: themes.primary,
+        backgroundColor: themes.green,
         padding: 20,
         margin: 10,
         borderRadius: 10,
@@ -45,15 +45,15 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
     },
     text: {
-        fontFamily: "Poppins-Light",
+        fontFamily: "Poppins-Bold",
         fontSize: 14,
-        color: themes.secondary,
+        color: themes.primary,
     },
     text2: {
         fontFamily: "Poppins-Bold",
         fontSize: 30,
         marginTop: 5,
-        color: themes.terciary
+        color: themes.primary
     },
     iconsOrder: {
         padding: 10

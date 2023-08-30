@@ -1,18 +1,28 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import OrderData from '../Data/orders.json'
 import OrderItem from '../Components/OrderItem'
+import { useGetOrdersQuery } from '../Services/orderServices'
+import { useSelector } from 'react-redux'
 
 const OrderScreen = () => {
+
+    const email = useSelector(state => state.userReducer.value.email)
+    const { data: order, isLoading, isError} = useGetOrdersQuery(email)
+
+    
+    console.log(isError);
+    console.log(isLoading);
+    console.log(order);
+
   return (
     <View>
         <FlatList 
-            data={OrderData}
-            keyExtractor={orderItem => orderItem.id}
-            renderItem={({item}) => {
+            data={order}
+            keyExtractor={orderItem => orderItem.email}
+            renderItem={({ item }) => {
                 return (
                     <OrderItem 
-                        order={item}      
+                        order={ item }      
                     />
                 )
             }}

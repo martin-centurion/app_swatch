@@ -1,31 +1,39 @@
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import CartItem from '../Components/CardItem'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { usePostCartMutation } from '../Services/shopServices'
 import { themes } from '../Global/Themes'
+import { removeFullCart } from '../Features/Cart/cartSlice'
 
 
 const Cart = () => {
 
-    const {items: CartData, total, updatedAt, user} = useSelector(state => state.cartReducer.value);
-    const [triggerPostCart, result] = usePostCartMutation();
+    const { total, items: CartData, user, updatedAt } = useSelector(state => state.cartReducer.value)
+    const [triggerPostCart, result] = usePostCartMutation()
+    const dispatch = useDispatch()
 
-    onConfirm = () => {
-        triggerPostCart({items: CartData, total, user, updatedAt});
+    const onConfirm = () => {
+        triggerPostCart({total, items: CartData, user, updatedAt, id: updatedAt})
     }
 
-    console.log(result);
+    useEffect(() => {
+        if (result.isSuccess) {
+            dispatch(removeFullCart())
+        }
+    }, [result])
+
+    
 
   return (
     <View style={styles.cartContainer}>
         <FlatList 
             data={CartData}
             keyExtractor={cardItem => cardItem.id}
-            renderItem={({item}) => (
+            renderItem={({ item }) => (
                  (
                     <CartItem 
-                        cartItem={item}
+                        cartItem={ item }
                     />
                 )
             )}

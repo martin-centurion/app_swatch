@@ -2,10 +2,9 @@ import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
 import { themes } from "../Global/Themes";
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement, incrementByAmount, reset } from "../Features/Counter/counterSlice";
+import { increment, decrement } from "../Features/Counter/counterSlice";
 
 const Counter = () => {
-    const [inputToAdd, setInputToAdd] = useState(0);
 
     const dispatch = useDispatch();
     const count = useSelector(state => state.counterReducer.value);
@@ -28,7 +27,7 @@ const Counter = () => {
                     <Text style={styles.buttonText}>+</Text>
                 </Pressable>
             </View>
-            <View style={styles.buttonsContainer}>
+            {/* <View style={styles.buttonsContainer}>
                 <TextInput
                     placeholder="Cantidad a aumentar"
                     style={styles.spanInput}
@@ -47,7 +46,7 @@ const Counter = () => {
                     onPress={() => {}}
             >
                 <Text style={styles.buttonText}>Reset</Text>
-            </Pressable>
+            </Pressable> */}
         </View>
     );
 };
@@ -58,26 +57,25 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: themes.secondary,
-        padding: 20
+        alignItems: 'flex-start',
+        marginTop: 10
     },
     buttonsContainer: {
         flexDirection: "row",
         justifyContent: "center",
-        alignItems: "center",
-        marginBottom: 10,
+        alignItems: "center"
     },
     button: {
-        padding: 10,
-        backgroundColor: themes.primary,
+        padding: 5,
+        backgroundColor: themes.green,
+        borderRadius: 50
     },
     span: {
-        backgroundColor: themes.terciary,
-        width: "60%",
+        width: "40%",
         padding: 10,
         textAlign: "center",
-        fontSize: 20,
+        fontSize: 14,
+        fontFamily: 'Poppins-Bold'
     },
     spanInput: {
         backgroundColor: themes.secondary,
@@ -89,6 +87,6 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 18,
         fontFamily: "Poppins-Medium",
-        color: themes.secondary
+        color: themes.primary
     },
 });

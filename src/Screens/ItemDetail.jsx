@@ -35,7 +35,6 @@ const ItemDetail = ({ route }) => {
           ...product, 
           quantity: 1
         }))
-        console.log('onPress');
     }
 
     return (

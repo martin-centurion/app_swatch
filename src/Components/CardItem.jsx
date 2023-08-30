@@ -5,6 +5,7 @@ import { themes } from "../Global/Themes";
 import { useDispatch } from "react-redux";
 import { removeCartItem } from "../Features/Cart/cartSlice";
 
+
 const CartItem = ({ cartItem }) => {
 
     const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const CartItem = ({ cartItem }) => {
                     <Image
                         source={{ uri: cartItem.images[0] }}
                         style={styles.image}
-                        resizeMode="contain"
+                        resizeMode="cover"
                     />
                 </View>
                 <View style={styles.iconsCart}>
@@ -55,7 +56,8 @@ const styles = StyleSheet.create({
         padding: 10
     },
     textContainer: {
-        flexDirection: "column"
+        flexDirection: "column",
+        width: 120
     },
     text: {
         fontFamily: "Poppins-Medium",

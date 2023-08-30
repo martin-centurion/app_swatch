@@ -295,5 +295,19 @@
         "images": [
             "https://static.swatch.com/images/product/AGS124/sa130/AGS124_sa130_er005.png"
         ]
+    },
+    {
+        "id": 22,
+        "title": "Shades Of Neon",
+        "description": "Este reloj retro de vivos colores está inspirado en un reloj Swatch de los 90, el SKYCHART GN705. Su esfera neón multicolor está engastada en una caja transparente de origen biológico color amarillo. La correa rosa intenso y la hebilla amarilla transparente complementan el look neón de este Swatch vintage.",
+        "price": 66.995,
+        "discountPercentage": 12.96,
+        "rating": 4.69,
+        "stock": 94,
+        "brand": "Swatch",
+        "category": "Mujer",
+        "images": [
+            "https://static.swatch.com/images/product/SO28J700/sa200/SO28J700_sa200_er005.png"
+        ]
     }
 ]

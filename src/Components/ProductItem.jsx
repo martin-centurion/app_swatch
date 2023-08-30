@@ -44,16 +44,16 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   textTitle: {
-    fontSize: 18,
-    fontFamily: 'Poppins-Light',
+    fontSize: 20,
+    fontFamily: 'Poppins-Bold',
     marginBottom: 3,
     marginHorizontal: 10,
     width: 80,
     color: themes.primary
   },
   textPrice: {
-    fontSize: 20,
-    fontFamily: 'Poppins-Bold',
+    fontSize: 18,
+    fontFamily: 'Poppins-Medium',
     color: themes.primary,
     marginHorizontal: 10
   },

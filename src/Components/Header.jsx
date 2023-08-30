@@ -12,8 +12,8 @@ const Header = ({route, navigation }) => {
   let title;
 
   if (route.name === 'Home') title = "Bienvenidos a Swatch ©";
-  if (route.name === 'Signup') title = "Registrate";
-  if (route.name === 'Login') title = "Ingresa";
+  if (route.name === 'Signup') title = "Registrarse";
+  if (route.name === 'Login') title = "Login";
   if (route.name === 'ItemListCategory') title = route.params.category;
   if (route.name === 'ItemDetail') title = route.params.title;
   if (route.name === 'CartScreen') title = "Mí Carrito";
