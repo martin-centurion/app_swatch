@@ -6,11 +6,11 @@ export const orderApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: realtime_database_url }),
     endpoints: (builder) => ({
         getOrders: builder.query({
-            query: (id) => `orders.json?orderBy="user"&equalTo="${id}"`,
-            transformResponse: (response) => {
-                const productsTransformed = Object.values(response)
-                return (productsTransformed)
-            }
+          query: (email) => `orders.json?orderBy="user"&equalTo="${email}"`,
+          transformResponse: (response) => {
+            const productsTransformed = Object.values(response)
+            return (productsTransformed)
+        }
         }),
     })
 })

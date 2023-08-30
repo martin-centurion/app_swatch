@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator()
 
 const Navigator = () => {
         
-        const {email} = useSelector(state => state.userReducer.value);
+        
         const dispatch = useDispatch();
 
         //Get stored sessions
@@ -46,6 +46,8 @@ const Navigator = () => {
                     }
                 })()
             }, [])
+
+            const {email} = useSelector(state => state.userReducer.value);
 
          
   return (

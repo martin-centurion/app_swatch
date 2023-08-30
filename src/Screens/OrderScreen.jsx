@@ -9,16 +9,20 @@ const OrderScreen = () => {
     const email = useSelector(state => state.userReducer.value.email)
     const { data: order, isLoading, isError} = useGetOrdersQuery(email)
 
+    if (isLoading) {
+        return <Text>Loading...</Text>;
+      }
     
-    console.log(isError);
-    console.log(isLoading);
+      if (isError) {
+        return <Text>Error loading orders.</Text>;
+      }
     console.log(order);
 
   return (
     <View>
         <FlatList 
             data={order}
-            keyExtractor={orderItem => orderItem.email}
+            keyExtractor={orderItem => orderItem}
             renderItem={({ item }) => {
                 return (
                     <OrderItem 

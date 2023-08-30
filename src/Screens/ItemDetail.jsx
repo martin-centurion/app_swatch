@@ -82,6 +82,7 @@ export default ItemDetail;
 
 const styles = StyleSheet.create({
   containerDetail: {
+    flex: 4
   },
   buttonContainer: {
     alignItems: 'flex-end'
