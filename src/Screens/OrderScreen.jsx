@@ -1,40 +1,44 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 import OrderItem from '../Components/OrderItem'
-import { useGetOrdersQuery } from '../Services/orderServices'
 import { useSelector } from 'react-redux'
+import { themes } from '../Global/Themes';
+import AddButton from "../Components/AddButton";
 
-const OrderScreen = () => {
+const OrderScreen = ({navigation}) => {
 
-    const email = useSelector(state => state.userReducer.value.email)
-    const { data: order, isLoading, isError} = useGetOrdersQuery(email)
-
-    if (isLoading) {
-        return <Text>Loading...</Text>;
-      }
-    
-      if (isError) {
-        return <Text>Error loading orders.</Text>;
-      }
-    console.log(order);
+    const { items: allCart, total, updatedAt, isCheckout } = useSelector(state => state.orderReducer.value);
 
   return (
-    <View>
-        <FlatList 
-            data={order}
-            keyExtractor={orderItem => orderItem}
-            renderItem={({ item }) => {
-                return (
+            <View>
+                {
+                isCheckout ? (
+                    
                     <OrderItem 
-                        order={ item }      
+                            order={allCart} 
+                            total={total} 
+                            updatedAt={updatedAt}  
+                    /> 
+                ) :
+                
+                <View style={styles.emptyContainer}>
+                    <Text>Ups! aun no tiene una compra realizada</Text> 
+                    <AddButton
+                        title="Ir a la tienda"
+                        onPress={() => navigation.navigate('Home')}
                     />
-                )
-            }}
-        />
-    </View>
+                </View>
+                }
+            </View>
   )
 }
 
 export default OrderScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    emptyContainer: {
+        backgroundColor: themes.pink,
+        padding: 50,
+        margin: 50,
+        borderRadius: 20
+    }
+})

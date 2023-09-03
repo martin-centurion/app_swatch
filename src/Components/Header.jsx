@@ -17,7 +17,7 @@ const Header = ({route, navigation }) => {
   if (route.name === 'ItemListCategory') title = route.params.category;
   if (route.name === 'ItemDetail') title = route.params.title;
   if (route.name === 'CartScreen') title = "Mí Carrito";
-  if (route.name === 'OrderScreen') title = "Ordenes de Compra";
+  if (route.name === 'OrderScreen') title = "Detalle de compra";
   if (route.name === 'My Profile') title = "Mi perfil";
   if (route.name === 'Image Selector') title = "Mi foto de perfil";
   if (route.name === 'Location Selector') title = "Mi foto de perfil";

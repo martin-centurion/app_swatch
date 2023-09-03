@@ -21,9 +21,9 @@ const LoginScreen = ({navigation}) => {
     const dispatch = useDispatch()
 
     const [triggerSignIn, resultSignIn] = useSignInMutation();
+    
     const onSubmit = () => {
 
-        //Submit logic with validations
         const isValidVariableEmail = isValidEmail(email)
         const isCorrectPassword = isAtLeastSixCharacters(password)
 
@@ -46,13 +46,11 @@ const LoginScreen = ({navigation}) => {
             try {
                 if(resultSignIn.isSuccess) {
                     //Insert session in SQLite database
-                    console.log('inserting Session');
                     const response = await insertSession({
                         email: resultSignIn.data.email,
                         idToken: resultSignIn.data.idToken,
                         localId: resultSignIn.data.localId,
                     })
-                    console.log('Session inserted: ');
                     console.log(response);
                     dispatch(setUser({
                         email: resultSignIn.data.email,

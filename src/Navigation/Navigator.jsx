@@ -13,7 +13,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import MyProfileStack from './MyProfileStack'
 import { getSession } from "../SQLite";
 import { setUser } from "../Features/User/userSlice";
-import { setUserCart } from '../Features/Cart/cartSlice';
 
 const Tab = createBottomTabNavigator()
 
@@ -23,31 +22,22 @@ const Navigator = () => {
         const dispatch = useDispatch();
 
         //Get stored sessions
-            useEffect(()=> {
-                (async ()=> {
-                    try {
-                        const session = await getSession()
-                        if (session?.rows.length) {
-                            const user = session.rows._array[0]
-                                dispatch(setUser({
-                                    ...user,
-                                    profileImage: "",
-                                    location: {
-                                        latitude: "",
-                                        longitude: "",
-                                        address: ""
-                                    },
-                            }))
-                            dispatch(setUserCart(user.email))
-                            }
-                    } catch (error) {
-                        console.log('Error getting session');
-                        console.log(error.message);
+        useEffect(()=> {
+            (async ()=> {
+                try {
+                    const session = await getSession()
+                    if (session?.rows.length) {
+                        const user = session.rows._array[0]
+                        dispatch(setUser(user))
                     }
-                })()
-            }, [])
+                } catch (error) {
+                    console.log('Error getting session');
+                    console.log(error.message);
+                }
+            })()
+        }, [])
 
-            const {email} = useSelector(state => state.userReducer.value);
+        const {email} = useSelector(state => state.userReducer.value);
 
          
   return (

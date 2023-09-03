@@ -11,6 +11,9 @@ export const shopApi = createApi({
         getProducts: builder.query({
             query: () => `products.json`
         }),
+        getOrders: builder.query({
+            query: () => `orders.json`
+        }),
         getProductsByCategory: builder.query({
             query: (category) => `products.json?orderBy="category"&equalTo="${category}"`,
             transformResponse: (response) => {
@@ -59,6 +62,13 @@ export const shopApi = createApi({
                 }
             })
         }),
+        getOrdersByUser: builder.query({
+            query: (user) => `orders.json?orderBy="user"&equalTo="${user}"`,
+            transformResponse: (response) => {
+                const productsTransformed = Object.values(response);
+                return(productsTransformed)
+            }
+        }),
     })
 })
 
@@ -72,4 +82,6 @@ export const {
     usePostProfileImageMutation,
     useGetUserLocationQuery,
     usePostUserLocationMutation,
+    useGetOrdersByUserQuery,
+    useGetOrdersQuery
 } = shopApi

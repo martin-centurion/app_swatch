@@ -33,8 +33,17 @@ export const cartSlice = createSlice({
                 0
             )
 
+            let totalQuantity = 0;
+            state.value.items.forEach((item) => {
+                totalQuantity += item.quantity  
+            });
+            state.value.totalQuantity = totalQuantity;
+
             //4. Update updatedAt
-            state.value.updatedAt = Date.now()
+            state.value.updatedAt = new Date().toLocaleString()
+
+            //6. Update Order
+            state.value.orderId = Date.now();
         },
         removeCartItem: (state,action) => {
             let newItems = state.value.items.filter(item => item.id != action.payload)

@@ -21,7 +21,7 @@ export default AddButton;
 
 const styles = StyleSheet.create({
     button: {
-        width: "80%",
+        marginTop: 40,
         borderRadius: 15,
         backgroundColor: themes.terciary,
         justifyContent: "center",
@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
         padding: 20
     },
     text: {
-        fontFamily: "Poppins-Bold",
-        fontSize: 18,
+        fontFamily: "Poppins-Medium",
+        fontSize: 14,
         color: themes.secondary,
     },
 });
