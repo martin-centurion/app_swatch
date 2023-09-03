@@ -1,2 +1,2 @@
-# app_swatch
+# Swatch - App Ecommerce
 Aplicación eCommerce Swatch - React Native
